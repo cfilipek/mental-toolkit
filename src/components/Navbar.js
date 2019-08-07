@@ -47,9 +47,6 @@ const Nav = () => {
               <Button variant="secondary" onClick={handleClose}>
                 Close
               </Button>
-              <Button variant="primary" onClick={handleClose}>
-                Save Changes
-              </Button>
             </Modal.Footer>
           </Modal>
           <Navbar.Text className="margin-right-nav">

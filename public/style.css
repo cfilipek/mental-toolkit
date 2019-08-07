@@ -22,6 +22,8 @@ body {
   padding-left: 20px;
   text-transform: uppercase;
   border-radius: 25px;
+  color: white !important;
+  cursor: pointer;
 
 }
 
@@ -66,6 +68,32 @@ body {
 
 .envelope{
   margin-top: 20px;
-  width: 35%;
+  width: 20%;
   margin-bottom: 50px;
+}
+
+.form-width{
+  width: 500px !important;
+}
+
+.center{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form {
+  background-color: #4c5ad2;
+  padding: 40px;
+  color: white;
+  border-radius: 25px;
+}
+
+.button-blue{
+  background-color: #6dc8d6 !important;
+}
+
+h3{
+  font-size: 25px !important;
+  line-height: 1.75em !important;
 }
