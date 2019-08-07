@@ -4,6 +4,7 @@ import Layout from './layout/Layout'
 import About from './components/About'
 import Login from './components/Login'
 import Signup from './components/Signup';
+import Home from './components/Home';
 
 
 
@@ -15,12 +16,12 @@ const App = () => {
   return (
     <Layout>
       <Switch>
-        <Route exact path='/'></Route>
+        <Route exact path='/' component={Home}></Route>
         <Route path='/toolkit'></Route>
         <Route path='/about' component={About}></Route>
         <Route path='/login' component={Login}></Route>
         <Route path='/signup' component={Signup}></Route>
-        <Redirect to='/' />
+        <Redirect to='/' component={Home}/>
       </Switch>
     </Layout>
     )
