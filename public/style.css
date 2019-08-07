@@ -1,0 +1,35 @@
+body {
+  font-family: 'Source Sans Pro', sans-serif !important;
+  margin: 0;
+  padding: 0;
+}
+
+.blue-nav{
+  background-color: #6dc8d6;
+  font-family: 'Concert One', cursive !important;
+}
+
+.margin-right-nav{
+  margin-right: 30px;
+  text-transform: uppercase;
+
+}
+
+.margin-right-nav-emergency{
+  margin-right: 100px;
+  background-color: #4c5ad2;
+  padding-right: 20px;
+  padding-left: 20px;
+  text-transform: uppercase;
+  border-radius: 25px;
+
+}
+
+.navbar-light .navbar-text a{
+  color: white !important;
+}
+
+.navbar-light .navbar-text a:hover{
+  text-decoration: none;
+  border-bottom: 3px solid white;
+}
