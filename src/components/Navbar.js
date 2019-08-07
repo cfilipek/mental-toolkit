@@ -33,15 +33,16 @@ const Nav = () => {
           className="justify-content-end"
         >
           <Navbar.Text className="margin-right-nav-emergency" onClick={handleShow} >
-            <NavLink>
+
               Emergency Resources
-            </NavLink>
+
           </Navbar.Text>
           <Modal show={show} onHide={handleClose} animation={false}>
             <Modal.Header closeButton>
-              <Modal.Title>Modal heading</Modal.Title>
+              <Modal.Title>Emergency Resources</Modal.Title>
             </Modal.Header>
-            <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+            <Modal.Body><a rel="noopener noreferrer" href="https://suicidepreventionlifeline.org/" target="_blank">National Suicide Prevention Lifeline</a>: Call 1-800-273-8255</Modal.Body>
+            <Modal.Body className="grey-text">Available 24 hours everyday</Modal.Body>
             <Modal.Footer>
               <Button variant="secondary" onClick={handleClose}>
                 Close
@@ -52,17 +53,17 @@ const Nav = () => {
             </Modal.Footer>
           </Modal>
           <Navbar.Text className="margin-right-nav">
-            <NavLink>
+            <NavLink to="/about">
               About
             </NavLink>
           </Navbar.Text>
               <Navbar.Text className="margin-right-nav">
-                <NavLink>
+                <NavLink to="login">
                       Login
                 </NavLink>
               </Navbar.Text>
                 <Navbar.Text className="margin-right-nav">
-                  <NavLink>
+                  <NavLink to="/signup">
                       Sign up
                   </NavLink>
             </Navbar.Text>

@@ -1,6 +1,7 @@
 import React from 'react'
 import {Route, Switch, Redirect} from 'react-router-dom'
 import Layout from './layout/Layout'
+import About from './components/About'
 
 
 
@@ -14,6 +15,7 @@ const App = () => {
       <Switch>
         <Route exact path='/'></Route>
         <Route path='/toolkit'></Route>
+        <Route path='/about' component={About}></Route>
         <Redirect to='/' />
       </Switch>
     </Layout>
