@@ -104,6 +104,10 @@ body {
 
 .button-blue{
   background-color: #6dc8d6 !important;
+  border-radius: 25px !important;
+  padding: 5px !important;
+  padding-left: 25px !important;
+  padding-right: 25px !important;
 }
 
 h3{
@@ -141,4 +145,13 @@ h3{
 .row-margin-bottom{
   margin-top: 100px;
   margin-bottom: 300px;
+}
+
+.button-move-down{
+  margin-top: 50px;
+}
+
+.btn {
+  display: block;
+  margin: 0 auto;
 }

@@ -5,6 +5,7 @@ import About from './components/About'
 import Login from './components/Login'
 import Signup from './components/Signup';
 import Home from './components/Home';
+import Toolkit from './components/Toolkit';
 
 
 
@@ -17,10 +18,10 @@ const App = () => {
     <Layout>
       <Switch>
         <Route exact path='/' component={Home}></Route>
-        <Route path='/toolkit'></Route>
         <Route path='/about' component={About}></Route>
         <Route path='/login' component={Login}></Route>
         <Route path='/signup' component={Signup}></Route>
+        <Route path='/toolkit' component={Toolkit}></Route>
         <Redirect to='/' component={Home}/>
       </Switch>
     </Layout>
