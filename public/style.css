@@ -156,3 +156,33 @@ h3{
   display: block;
   margin: 0 auto;
 }
+
+.margin-top-button{
+  margin-top: 50px;
+}
+
+.field{
+  padding: 10px;
+  padding-right: 20px;
+  padding-left: 20px;
+  border-radius: 15px;
+  border: none;
+}
+
+.margin-left-button{
+  margin-left: 50px;
+}
+
+.title-margin-bottom{
+  margin-bottom: 50px;
+}
+
+.form-title{
+  font-family: 'Concert One', cursive !important;
+  text-transform: uppercase;
+  padding-bottom: 50px;
+  margin: 0 auto;
+}
+
+
+

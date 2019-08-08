@@ -16,7 +16,9 @@ const rrfConfig ={
 
 //redux devtools
 const composeEnhancers =
-process.env.NODE_ENV === 'developement' ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose : compose
+// process.env.NODE_ENV === 'developement' ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose : compose
+window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+
 
 const store = createStore(
   rootReducer,
