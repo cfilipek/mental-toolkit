@@ -51,6 +51,11 @@ const Nav = () => {
           </Modal>
           <Navbar.Text className="margin-right-nav">
             <NavLink to="/about">
+              Why join?
+            </NavLink>
+          </Navbar.Text>
+          <Navbar.Text className="margin-right-nav">
+            <NavLink to="/about">
               About
             </NavLink>
           </Navbar.Text>
