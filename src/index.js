@@ -4,8 +4,9 @@ import {BrowserRouter} from 'react-router-dom'
 import App from './App'
 import {Provider} from 'react-redux'
 import store from './store'
+import Loader from './components/Loader'
 
-ReactDOM.render(<div>Loading...</div>, document.getElementById('root'))
+ReactDOM.render(<Loader/>, document.getElementById('root'))
 
 //http://react-redux-firebase.com/docs/recipes/auth.html
 store.firebaseAuthIsReady.then(()=> {

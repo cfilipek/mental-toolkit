@@ -9,6 +9,7 @@ import {reduxFirestore, getFirestore} from 'redux-firestore'
 import rootReducer from './reducers'
 
 //react-redux-firebase config
+//http://react-redux-firebase.com/docs/recipes/auth.html
 const rrfConfig ={
   userProfile: 'users',
   useFirestoreForProfile: true, //Firestore for profile instead of realtime DB
