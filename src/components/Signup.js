@@ -53,13 +53,15 @@ const Signup = () => {
                   <Field className="field"
                       type="text"
                       name="firstName"
-                      placeholder="Your first name"
+                      placeholder="first name"
                     />
+                    <ErrorMessage name="name"/>
                     <Field className="field"
                       type="text"
                       name="lastName"
-                      placeholder="Your last name"
+                      placeholder="last name"
                     />
+                    <ErrorMessage name="name"/>
                     <Field className="field"
                       type="email"
                       name="email"
@@ -85,7 +87,7 @@ const Signup = () => {
                      <Link to="/login"><Button className="button-blue margin-top-button">
                       Login
                       </Button></Link>
-                      <Button className="button-blue margin-top-button margin-left-button" disabled={!isValid} type="submit">
+                      <Button className="button-blue margin-top-button margin-left-button" type="submit">
                       Sign up
                       </Button>
                   </Form>

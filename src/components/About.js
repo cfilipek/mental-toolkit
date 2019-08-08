@@ -6,7 +6,8 @@ const About = () => {
     <div>
       <Row>
         <Col sm={4} className="title">
-          About <span className="blue-text"><br/>Me</span>ntal
+          <div>About <span className="blue-text"><br/>Me</span>ntal</div>
+          <div className="backgound-image-about"></div>
         </Col>
         <Col sm={6} className="col-width">
           <h3>This website was created as a resource for everybody. Because everybody, despite how it may seem on social media, has their own mental health struggles.

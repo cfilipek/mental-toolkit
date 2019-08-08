@@ -50,7 +50,7 @@ const Nav = () => {
             </Modal.Footer>
           </Modal>
           <Navbar.Text className="margin-right-nav">
-            <NavLink to="/about">
+            <NavLink to="/whyjoin">
               Why join?
             </NavLink>
           </Navbar.Text>

@@ -55,7 +55,7 @@ const Login = () => {
                      <Link to="/signup"><Button className="button-blue margin-top-button">
                       Sign up
                       </Button></Link>
-                      <Button className="button-blue margin-top-button margin-left-button" disabled={!isValid} type="submit">
+                      <Button className="button-blue margin-top-button margin-left-button" type="submit">
                       Login
                       </Button>
                   </Form>
