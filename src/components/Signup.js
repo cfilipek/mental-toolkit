@@ -27,7 +27,8 @@ const SignupSchema = Yup.object().shape({
   .oneOf([Yup.ref('password'), null], `Password doesn't match.`)
 });
 
-const Signup = ({signUp}) => {
+const Signup = ({signUp, loading}) => {
+  console.log(loading)
   return (
     <Formik
       initialValues={{
@@ -95,7 +96,7 @@ const Signup = ({signUp}) => {
                       Login
                       </Button></Link>
                       <Button className="button-blue margin-top-button margin-left-button" type="submit">
-                      Sign up
+                      {loading= loading ? 'Signing up' : 'Sign Up' }
                       </Button>
                   </Form>
                   </div>
@@ -107,8 +108,8 @@ const Signup = ({signUp}) => {
   );
 };
 
-const mapStateToProps = (state) => ({
-
+const mapStateToProps = ({auth}) => ({
+  loading: auth.loading,
 })
 
 const mapDispatchToProps = {

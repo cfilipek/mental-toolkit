@@ -5,6 +5,7 @@ import * as Yup from 'yup';
 import {Button, Col, Row} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
 
+//yup docs https://github.com/jquense/yup
 const LoginSchema = Yup.object().shape({
   email: Yup.string()
     .email('Invalid email.')
