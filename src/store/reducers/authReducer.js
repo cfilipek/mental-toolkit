@@ -13,6 +13,8 @@ export default (state = initialState, action) => {
       return {...state, loading:false}
     case 'AUTH_FAIL':
       return {...state, error: action.payload}
+    case 'AUTH_SUCCESS':
+      return { ...state, error: false };
     default:
       return state
   }

@@ -27,7 +27,7 @@ export const signUp = data => async (dispatch, getState, {getFirebase, getFirest
   }catch(err){
     dispatch({type: 'AUTH_FAIL', payload: err.message}) //payload to capture error message
   }
-  //even if it gives an error we dispatch an action if not successful
+  //even if it gives an error dispatch an action if not successful
   dispatch({type: 'AUTH_END'})
 }
 
@@ -41,4 +41,18 @@ export const signOut = () => async (dispatch, getState, {getFirebase}) => {
   }catch(err){
     console.log(err.message)
   }
+}
+
+//login action creator
+//https://firebase.google.com/docs/auth/web/password-auth -- login section
+export const signIn = (data) => async (dispatch, getState, {getFirebase}) => {
+  const firebase = getFirebase()
+  dispatch({type: 'AUTH_START'})
+  try {
+    await firebase.auth().signInWithEmailAndPassword(data.email, data.password)
+    dispatch({type: 'AUTH_SUCCESS'})
+  } catch(err){
+    dispatch({type: 'AUTH_FAIL', payload: err.message}) //payload to capture error message
+  }
+  dispatch({type: 'AUTH_END'})
 }

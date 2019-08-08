@@ -4,16 +4,18 @@ import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import {Button, Col, Row} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
+import * as actions from '../store/actions'
+import {connect} from 'react-redux'
 
 //yup docs https://github.com/jquense/yup
 const LoginSchema = Yup.object().shape({
   email: Yup.string()
     .email('Invalid email.')
     .required('The email is required.'),
-  password: Yup.string().required('The password is required.'),
+  password: Yup.string().required('The password is required.').min(8, 'Too short'),
 });
 
-const Login = () => {
+const Login = ({login, loading, error}) => {
   return (
     <Formik
       initialValues={{
@@ -21,8 +23,10 @@ const Login = () => {
         password: '',
       }}
       validationSchema={LoginSchema}
-      onSubmit={(values, { setSubmitting }) => {
-        console.log(values);
+      onSubmit={ async(values, { setSubmitting }) => {
+        console.log(values)
+        await login(values)
+        setSubmitting(false)
       }}
     >
       {({ isSubmitting, isValid }) => (
@@ -58,8 +62,9 @@ const Login = () => {
                       Sign up
                       </Button></Link>
                       <Button className="button-blue margin-top-button margin-left-button" type="submit">
-                      Login
+                      {loading= loading ? 'Logging in' : 'Login' }
                       </Button>
+                      <p className="center-text padding-description">{error ? 'This user does not exist.' : 'Welcome back!'}</p>
                   </Form>
                   </div>
                   </Col>
@@ -70,4 +75,13 @@ const Login = () => {
   );
 };
 
-export default Login
+const mapSateToProps = ({auth}) => ({
+  loading: auth.loading,
+  error: auth.error
+})
+
+const mapDispatchToProps = {
+  login: actions.signIn
+}
+
+export default connect(mapSateToProps, mapDispatchToProps) (Login)
