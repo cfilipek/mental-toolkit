@@ -33,7 +33,7 @@ const Login = () => {
               <Form  className="form">
                 <Row>
                     <h6 color="white" className="form-title">
-                      Fill in your details to login into your account
+                      Welcome back to Mental!
                     </h6>
                   <Col sm={6}>
                     <Field className="field"

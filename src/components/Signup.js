@@ -5,21 +5,34 @@ import * as Yup from 'yup';
 import {Button, Col, Row} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
 
-const LoginSchema = Yup.object().shape({
+const SignupSchema = Yup.object().shape({
+  firstName: Yup.string()
+  .required('Your first name is required')
+  .min(3, 'Too short.')
+  .max(25, 'Too long.'),
+  lastName: Yup.string()
+  .required('Your first name is required')
+  .min(3, 'Too short.')
+  .max(25, 'Too long.'),
   email: Yup.string()
     .email('Invalid email.')
     .required('The email is required.'),
   password: Yup.string().required('The password is required.'),
+  confirmPassword: Yup.string().required('You need to confirm your password.')
+  .oneOf([Yup.ref('password'), null], `Password doesn't match.`)
 });
 
 const Signup = () => {
   return (
     <Formik
       initialValues={{
+        firstName: '',
+        lastName:'',
         email: '',
         password: '',
+        confirmPassword: ''
       }}
-      validationSchema={LoginSchema}
+      validationSchema={SignupSchema}
       onSubmit={(values, { setSubmitting }) => {
         console.log(values);
       }}
@@ -37,10 +50,20 @@ const Signup = () => {
                       Sign up to create your own toolkit
                     </h6>
                   <Col sm={6}>
+                  <Field className="field"
+                      type="text"
+                      name="firstName"
+                      placeholder="Your first name"
+                    />
+                    <Field className="field"
+                      type="text"
+                      name="lastName"
+                      placeholder="Your last name"
+                    />
                     <Field className="field"
                       type="email"
                       name="email"
-                      placeholder="Your email..."
+                      placeholder="Your email"
                     />
                     <ErrorMessage name="email"/>
                   </Col>
@@ -48,7 +71,13 @@ const Signup = () => {
                     <Field className="field"
                       type="password"
                       name="password"
-                      placeholder="Your password..."
+                      placeholder="Your password"
+                    />
+                     <ErrorMessage name="password"/>
+                     <Field className="field"
+                      type="password"
+                      name="confirmPassword"
+                      placeholder="Re-type your password"
                     />
                      <ErrorMessage name="password"/>
                   </Col>
