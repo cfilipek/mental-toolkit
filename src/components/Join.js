@@ -12,7 +12,7 @@ const Join = () => {
         <Col sm={6} className="col-width">
           <h3>Join the Mental community and create a distress tolerance toolkit of your own!
           </h3>
-          <div className="title color-purple">
+          <div className="title-some-margin center-text color-purple">
           What is a toolkit?
         </div>
           <h3 className="h3-no-top-margin"><span className="weight-bold">Distress tolerance</span> skills refer to a type of intervention in Dialectical Behavioral Therapy (DBT) where clients learn to manage distress in a healthy way. These skills are helpful for situations where a client might not be able to control a situation, but they need to manage their own response.</h3>
@@ -20,7 +20,7 @@ const Join = () => {
         </Col>
       </Row>
       <div className="center-text">
-        <div className="title">Any questions?</div>
+        <div className="title-some-margin">Any questions?</div>
         <a href="mailto:claireflpk@gmail.com?Subject=Hello%20again" target="_top"><h3 className="margin-top-h3">Please email us to let us know!</h3></a>
         <img className="envelope" src="https://i.imgur.com/yqkNV5Z.png" alt="letter" />
       </div>

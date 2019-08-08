@@ -17,7 +17,7 @@ const About = () => {
         </Col>
       </Row>
       <div className="center-text">
-        <div className="title">How can we do better?</div>
+        <div className="title-no-margin">How can we do better?</div>
         <a href="mailto:claireflpk@gmail.com?Subject=Hello%20again" target="_top"><h3 className="margin-top-h3">Please email us to let us know!</h3></a>
         <img className="envelope" src="https://i.imgur.com/yqkNV5Z.png" alt="letter" />
       </div>
