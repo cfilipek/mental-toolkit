@@ -11,7 +11,8 @@ import rootReducer from './reducers'
 //react-redux-firebase config
 const rrfConfig ={
   userProfile: 'users',
-  useFirestoreForProfile: true
+  useFirestoreForProfile: true, //Firestore for profile instead of realtime DB
+  attachAuthIsReady: true, // attaches auth is ready promise to store
 }
 
 //redux devtools

@@ -30,3 +30,15 @@ export const signUp = data => async (dispatch, getState, {getFirebase, getFirest
   //even if it gives an error we dispatch an action if not successful
   dispatch({type: 'AUTH_END'})
 }
+
+//logout action creator
+//https://firebase.google.com/docs/auth/web/password-auth -- signout section
+export const signOut = () => async (dispatch, getState, {getFirebase}) => {
+  const firebase = getFirebase()
+  try{
+    await firebase.auth().signOut()
+
+  }catch(err){
+    console.log(err.message)
+  }
+}
