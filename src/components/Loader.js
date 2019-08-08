@@ -1,6 +1,7 @@
 import React from 'react'
 
 //https://loading.io/css/
+//Appears upon refresh when logged in
 
 const Loader = () => {
   return (
