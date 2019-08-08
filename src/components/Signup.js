@@ -1,10 +1,14 @@
 
 import React from 'react';
+import {connect} from 'react-redux'
+//Formik docs https://github.com/jaredpalmer/formik
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import {Button, Col, Row} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
+import * as actions from '../store/actions'
 
+//yup docs https://github.com/jquense/yup
 const SignupSchema = Yup.object().shape({
   firstName: Yup.string()
   .required('Your first name is required')
@@ -17,12 +21,13 @@ const SignupSchema = Yup.object().shape({
   email: Yup.string()
     .email('Invalid email.')
     .required('The email is required.'),
-  password: Yup.string().required('The password is required.'),
+  password: Yup.string().required('The password is required.')
+  .min(8, 'The password is too short.'),
   confirmPassword: Yup.string().required('You need to confirm your password.')
   .oneOf([Yup.ref('password'), null], `Password doesn't match.`)
 });
 
-const Signup = () => {
+const Signup = ({signUp}) => {
   return (
     <Formik
       initialValues={{
@@ -35,6 +40,8 @@ const Signup = () => {
       validationSchema={SignupSchema}
       onSubmit={(values, { setSubmitting }) => {
         console.log(values);
+        signUp(values)
+        setSubmitting(false)
       }}
     >
       {({ isSubmitting, isValid }) => (
@@ -100,4 +107,13 @@ const Signup = () => {
   );
 };
 
-export default Signup
+const mapStateToProps = (state) => ({
+
+})
+
+const mapDispatchToProps = {
+  signUp : actions.signUp
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Signup)
