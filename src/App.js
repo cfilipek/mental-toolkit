@@ -7,6 +7,7 @@ import Signup from './components/Signup';
 import Home from './components/Home';
 import Toolkit from './components/Toolkit';
 import Join from './components/Join';
+import SingleToolkit from './components/SingleToolkit';
 
 
 
@@ -22,8 +23,9 @@ const App = () => {
         <Route path='/about' component={About}></Route>
         <Route path='/login' component={Login}></Route>
         <Route path='/signup' component={Signup}></Route>
-        <Route path='/toolkit' component={Toolkit}></Route>
+        <Route exact path='/toolkit' component={Toolkit}></Route>
         <Route path='/whyjoin' component={Join}></Route>
+        <Route path='/toolkit:id' component={SingleToolkit}></Route>
         <Redirect to='/' component={Home}/>
       </Switch>
     </Layout>
