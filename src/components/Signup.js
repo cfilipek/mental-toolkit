@@ -27,8 +27,9 @@ const SignupSchema = Yup.object().shape({
   .oneOf([Yup.ref('password'), null], `Password doesn't match.`)
 });
 
-const Signup = ({signUp, loading}) => {
+const Signup = ({signUp, loading, error}) => {
   console.log(loading)
+  console.log(error)
   return (
     <Formik
       initialValues={{
@@ -45,7 +46,7 @@ const Signup = ({signUp, loading}) => {
         setSubmitting(false)
       }}
     >
-      {({ isSubmitting, isValid }) => (
+      {() => (
         <div>
           <div className="title title-margin-bottom">Sign up</div>
           <Row className="center">
@@ -98,6 +99,7 @@ const Signup = ({signUp, loading}) => {
                       <Button className="button-blue margin-top-button margin-left-button" type="submit">
                       {loading= loading ? 'Signing up' : 'Sign Up' }
                       </Button>
+                      <p className="center-text padding-description">{error ? 'Password has already been used.' : 'Sign up to join the Mental Community!'}</p>
                   </Form>
                   </div>
                   </Col>
@@ -110,6 +112,7 @@ const Signup = ({signUp, loading}) => {
 
 const mapStateToProps = ({auth}) => ({
   loading: auth.loading,
+  error: auth.error,
 })
 
 const mapDispatchToProps = {

@@ -7,7 +7,7 @@ import {Navbar, Modal, Button} from 'react-bootstrap'
 //hover border-bottom 2px solid white
 
 
-const Nav = () => {
+const Nav = ({loggedIn}) => {
 
   const [show, setShow] = useState(false);
 
@@ -49,26 +49,49 @@ const Nav = () => {
               </Button>
             </Modal.Footer>
           </Modal>
+          <div>
+         {!loggedIn.uid?
+         <div>
           <Navbar.Text className="margin-right-nav">
-            <NavLink to="/whyjoin">
-              Why join?
-            </NavLink>
-          </Navbar.Text>
-          <Navbar.Text className="margin-right-nav">
-            <NavLink to="/about">
-              About
-            </NavLink>
-          </Navbar.Text>
-              <Navbar.Text className="margin-right-nav">
-                <NavLink to="login">
-                      Login
-                </NavLink>
+              <NavLink to="/whyjoin">
+                Why join?
+              </NavLink>
+            </Navbar.Text>
+            <Navbar.Text className="margin-right-nav">
+              <NavLink to="/about">
+                About
+              </NavLink>
               </Navbar.Text>
                 <Navbar.Text className="margin-right-nav">
-                  <NavLink to="/signup">
-                      Sign up
+                  <NavLink to="/login">
+                        Login
                   </NavLink>
+                </Navbar.Text>
+                  <Navbar.Text className="margin-right-nav">
+                    <NavLink to="/signup">
+                        Sign up
+                    </NavLink>
+              </Navbar.Text>
+            </div>:
+            <div>
+              <Navbar.Text className="margin-right-nav">
+              <NavLink to="/whyjoin">
+                what is a toolkit?
+              </NavLink>
             </Navbar.Text>
+            <Navbar.Text className="margin-right-nav">
+              <NavLink to="/about">
+                About
+              </NavLink>
+              </Navbar.Text>
+                <Navbar.Text className="margin-right-nav">
+                  <NavLink to="/logout">
+                        Logout
+                  </NavLink>
+                </Navbar.Text>
+            </div>
+          }
+          </div>
         </Navbar.Collapse>
       </Navbar>
     </div>

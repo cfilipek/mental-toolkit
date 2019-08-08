@@ -228,3 +228,7 @@ h3{
   font-family: 'Concert One', cursive !important;
   font-size: 65px;
 }
+
+.padding-description{
+  margin-top: 30px;
+}

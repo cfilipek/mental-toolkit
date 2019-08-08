@@ -25,7 +25,7 @@ export const signUp = data => async (dispatch, getState, {getFirebase, getFirest
     })
 
   }catch(err){
-    console.log(err.message)
+    dispatch({type: 'AUTH_FAIL', payload: err.message}) //payload to capture error message
   }
   //even if it gives an error we dispatch an action if not successful
   dispatch({type: 'AUTH_END'})
