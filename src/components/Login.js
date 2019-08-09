@@ -8,6 +8,7 @@ import * as actions from '../store/actions'
 import {connect} from 'react-redux'
 
 //yup docs https://github.com/jquense/yup
+//Yup requirements: https://dev.to/finallynero/react-form-using-formik-material-ui-and-yup-2e8h
 const LoginSchema = Yup.object().shape({
   email: Yup.string()
     .email('Invalid email.')
@@ -15,6 +16,8 @@ const LoginSchema = Yup.object().shape({
   password: Yup.string().required('The password is required.').min(8, 'Too short'),
 });
 
+//https://medium.com/medialesson/build-react-forms-and-validation-like-a-boss-with-formik-3d1f0c0fe52e
+//using Formik https://blog.bitsrc.io/creating-forms-in-react-with-formik-and-yup-698d09363a22
 const Login = ({login, loading, error}) => {
   return (
     <Formik

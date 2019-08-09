@@ -1,16 +1,35 @@
 
 //Add a toolkit
 
-export const addToolkit = data => async(dispatch, getState, {getFirestore}) => {
+export const addToolkit = data => async(dispatch, getState, {getFirestore, getFirebase}) => {
   const firestore = getFirestore()
-  dispatch({type: "ADD_TODO_START"})
   const userId = getState().firebase.auth.uid
-
+  dispatch({type: "ADD_TODO_START"})
   try {
-     await firestore.collection('toolkit').doc(userId)
-     .update({
-      toolkit: firestore.FieldValue.arrayUnion(data.activity, data.description, data.category)
-    })
+     const res = await firestore.collection('toolkits').doc(userId)
+     .get()
+     const newToolkit = {
+       id: new Date().valueOf(),
+       activity: data.activity,
+       description: data.description,
+       category: data.category
+     }
+     if (!res.data()) {
+      firestore
+        .collection('toolkits')
+        .doc(userId)
+        .set({
+          toolkits: [newToolkit],
+        });
+    } else {
+      firestore
+        .collection('toolkits')
+        .doc(userId)
+        .update({
+          toolkits: [...res.data().toolkits, newToolkit],
+        })
+    }
+
     dispatch({type: "ADD_TODO_SUCCESS"})
   }catch(err){
     dispatch({type: "ADD_TOOLKIT_FAIL", payload: err.message})

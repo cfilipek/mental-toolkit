@@ -1,34 +1,28 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import * as actions from '../store/actions'
 import AddToolkit from './AddToolkit'
-
-import * as Yup from 'yup';
-
-const ToolkitSchema = Yup.object().shape({
-  activity: Yup.string()
-    .required('The activity is required.')
-    .min(4, 'Too short.'),
-  description: Yup.string()
-    .required('The description is required.')
-    .min(4, 'Too short.'),
-  category: Yup.string()
-    .required('The category is required.')
-});
+// import { firestoreConnect } from 'react-redux-firebase'
 
 
-const Toolkit = () => {
+
+
+const Toolkit = ({userId, activity, requesting, requested}) => {
   return (
     <div>
-      <AddToolkit/>
+      <div>
+        <AddToolkit/>
+      </div>
     </div>
   )
 }
 
-// const mapStateToProps = (state) => ({
+// const mapStateToProps = ({ firebase, firestore }) => {
+//   console.log('firestore', firestore)
+//   return {
+//   userId: firebase.auth.uid,
+//   // toolkits: firestore.data,
+//   // requesting: firestore.status.requesting,
+//   // requested: firestore.status.requested,
+//   }};
 
-// })
-
-const mapDispatchToProps = {}
-
-export default connect(null, mapDispatchToProps) (Toolkit)
+export default connect(null, null) (Toolkit)
