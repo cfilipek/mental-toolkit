@@ -1,9 +1,9 @@
 import React, {useState} from 'react'
 import {connect} from 'react-redux'
 import * as actions from '../store/actions'
-import {Button} from 'react-bootstrap'
+import {Button, Row, Col} from 'react-bootstrap'
 import * as Yup from 'yup';
-import { Formik, Field} from 'formik';
+import { Formik, Field, Form, ErrorMessage} from 'formik';
 //https://www.styled-components.com/
 import styled from 'styled-components'
 
@@ -29,15 +29,16 @@ const Modal = styled.div`
   visibility: ${({ opened }) => (opened ? 'visible' : 'hidden')};
   background-color: #4c5ad2;
   color: white;
-  padding: 20px;
+  padding: 50px;
   border-radius: 25px;`
+
 
 //add toolkit modal using Formik
 //using Formik: https://blog.bitsrc.io/creating-forms-in-react-with-formik-and-yup-698d09363a22
-const AddToolkit = () => {
+const AddToolkit = ({addToolkit}) => {
   const [isOpened, setisOpened] = useState(false)
+  console.log(addToolkit)
   return (
-    <>
     <div className="text-center">
       <Button className="button-blue move-down-button" onClick={()=> setisOpened(true)}>
       Add toolkit item
@@ -46,11 +47,85 @@ const AddToolkit = () => {
         <h3 className="modal-heading">
           Add your toolkit item
         </h3>
-        <Formik></Formik>
+        <h6>Type your todo and press add.</h6>
+        <div>
+        <Formik
+          initialValues={{
+            activity: '',
+            description: '',
+            category: ''
+          }}
+          validationSchema= {ToolkitSchema}
+          onSubmit={ async(values, { setSubmitting }) => {
+            //send our form
+            const res = await addToolkit(values)
+            console.log('res', res)
+                setSubmitting(false)
+                if (res) {
+                setisOpened(false)
+                }
+          }}
+        >
+          <Form>
+          <Row>
+            <Col>
+              <Field className="field-toolkit"
+                     component="textarea"
+                     rows="4"
+                    name="activity"
+                    placeholder="Enter your activity"
+              />
+               <ErrorMessage className="err-message" name="activity"/>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <Field className="field-toolkit"
+                     component="textarea"
+                     rows="4"
+                    name="description"
+                    placeholder="Enter your description"
+              />
+              <ErrorMessage className="err-message" name="description"/>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <label htmlFor="category">
+                Categories:
+              </label>
+          </Col>
+          </Row>
+           <Field
+           className='select'
+            name="category"
+            component="select">
+              <option value="" label="Select a category" />
+              <option value="Art" label="Art" />
+              <option value="Exercise" label="Exercise" />
+              <option value="Music" label="Music" />
+              <option value="Gaming" label="Gaming" />
+              <option value="Travel" label="Travel" />
+              <option value="Animal Related" label="Animal Related" />
+              <option value="Social" label="Social" />
+              <option value="Volunteering" label="Volunteering" />
+              <option value="Other" label="Other" />
+            </Field>
+            <ErrorMessage className="err-message" name="category"/>
+          <Row>
+          <Col sm={6}>
+            <Button type="submit" className="button-blue">Add</Button>
+          </Col>
+          <Col sm={6}>
+          <Button className="button-blue" onClick={()=> setisOpened(false)}>Close</Button>
+          </Col>
+        </Row>
+        </Form>
+        </Formik>
+        </div>
 
       </Modal>
     </div>
-    </>
   )
 }
 
@@ -59,8 +134,8 @@ const AddToolkit = () => {
 //   error: toolkits.error
 // })
 
-const mapDispatchToPRops = {
+const mapDispatchToProps = {
   addToolkit: actions.addToolkit
 }
 
-export default connect(null, mapDispatchToPRops)(AddToolkit)
+export default connect(null, mapDispatchToProps)(AddToolkit)

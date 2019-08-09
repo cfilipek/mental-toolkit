@@ -4,9 +4,9 @@
 export const addToolkit = data => async(dispatch, getState, {getFirestore, getFirebase}) => {
   const firestore = getFirestore()
   const userId = getState().firebase.auth.uid
-  dispatch({type: "ADD_TODO_START"})
+  dispatch({type: "ADD_TOOLKIT_START"})
   try {
-     const res = await firestore.collection('toolkits').doc(userId)
+     const res = await firestore.collection('toolkit').doc(userId)
      .get()
      const newToolkit = {
        id: new Date().valueOf(),
@@ -16,21 +16,22 @@ export const addToolkit = data => async(dispatch, getState, {getFirestore, getFi
      }
      if (!res.data()) {
       firestore
-        .collection('toolkits')
+        .collection('toolkit')
         .doc(userId)
         .set({
-          toolkits: [newToolkit],
+          toolkit: [newToolkit],
         });
     } else {
       firestore
-        .collection('toolkits')
+        .collection('toolkit')
         .doc(userId)
         .update({
-          toolkits: [...res.data().toolkits, newToolkit],
+          toolkit: [...res.data().toolkit, newToolkit],
         })
     }
 
-    dispatch({type: "ADD_TODO_SUCCESS"})
+    dispatch({type: "ADD_TOOLKIT_SUCCESS"})
+    return true
   }catch(err){
     dispatch({type: "ADD_TOOLKIT_FAIL", payload: err.message})
   }

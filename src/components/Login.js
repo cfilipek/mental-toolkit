@@ -32,7 +32,6 @@ const Login = ({login, loading, error}) => {
         setSubmitting(false)
       }}
     >
-      {({ isSubmitting, isValid }) => (
         <div>
           <div className="title title-margin-bottom">Login</div>
           <Row className="center">
@@ -73,7 +72,6 @@ const Login = ({login, loading, error}) => {
                   </Col>
                 </Row>
             </div>
-      )}
     </Formik>
   );
 };
