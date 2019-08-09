@@ -75,6 +75,11 @@ const Nav = ({loggedIn}) => {
             </div>:
             <div>
               <Navbar.Text className="margin-right-nav">
+              <NavLink to="/toolkit">
+                my toolkit
+              </NavLink>
+            </Navbar.Text>
+              <Navbar.Text className="margin-right-nav">
               <NavLink to="/whyjoin">
                 what is a toolkit?
               </NavLink>

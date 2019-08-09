@@ -13,7 +13,7 @@ import Logout from './components/Logout';
 
 
 
-//layout controls my navbar and the rest of the page items that are sent down as props
+//layout controls navbar and the rest of the page items that are sent down as props
 
 //if it doesn't match routes it will go home
 
@@ -27,6 +27,7 @@ const App = ({loggedIn}) => {
         <Route exact path='/' component={Home}></Route>
         <Route exact path='/toolkit' component={Toolkit}></Route>
         <Route path='/toolkit:id' component={SingleToolkit}></Route>
+        <Route path='/about' component={About}></Route>
         <Route path='/whyjoin' component={Join}></Route>
         <Route path='/logout' component={Logout}></Route>
         <Redirect to='/' component={Home}/>
