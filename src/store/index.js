@@ -22,12 +22,16 @@ process.env.NODE_ENV === 'development' ? window.__REDUX_DEVTOOLS_EXTENSION_COMPO
 
 
 
+
+
 const store = createStore(
   rootReducer,
   composeEnhancers(
     reactReduxFirebase(firebase, rrfConfig),
     reduxFirestore(firebase),
-    applyMiddleware(thunk.withExtraArgument({getFirebase, getFirestore}), createLogger({collapsed: true})))
+    applyMiddleware(thunk.withExtraArgument({ getFirebase, getFirestore }),
+    createLogger({collapsed: true}))
+  )
 )
 
 export default store
