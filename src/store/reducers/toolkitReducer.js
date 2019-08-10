@@ -1,9 +1,7 @@
 
 const initialState = {
-  error: null,
   loading: false,
   deleteToolkit: {
-    error: null,
     loading: false
   }
 }

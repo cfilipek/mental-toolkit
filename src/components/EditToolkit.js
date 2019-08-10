@@ -129,7 +129,6 @@ const EditToolkit = ({show, close, toolkit, editToolkit, loading, error}) => {
 
 const mapStateToProps = ({toolkit})  => ({
   loading: toolkit.loading,
-  error: toolkit.error
 })
 
 const mapDispatchToProps = {

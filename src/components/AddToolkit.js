@@ -47,7 +47,7 @@ const Modal = styled.div`
 
 //add toolkit modal using Formik
 //using Formik: https://blog.bitsrc.io/creating-forms-in-react-with-formik-and-yup-698d09363a22
-const AddToolkit = ({addToolkit}) => {
+const AddToolkit = ({addToolkit, loading}) => {
   const [isOpened, setisOpened] = useState(false)
   console.log(addToolkit)
   return (
@@ -127,7 +127,7 @@ const AddToolkit = ({addToolkit}) => {
             <ErrorMessage className="err-message" name="category"/>
           <Row>
           <Col sm={6}>
-            <Button type="submit" className="button-blue">Add</Button>
+            <Button type="submit" className="button-blue">{loading= loading ? 'Adding' : 'Add' }</Button>
           </Col>
           <Col sm={6}>
           <Button className="button-blue" onClick={()=> {setisOpened(false)}}>Close</Button>
@@ -142,13 +142,12 @@ const AddToolkit = ({addToolkit}) => {
   )
 }
 
-// const mapStateToProps = ({toolkits}) => ({
-//   loading: toolkits.loading,
-//   error: toolkits.error
-// })
+const mapStateToProps = ({toolkit}) => ({
+  loading: toolkit.loading,
+})
 
 const mapDispatchToProps = {
   addToolkit: actions.addToolkit
 }
 
-export default connect(null, mapDispatchToProps)(AddToolkit)
+export default connect(mapStateToProps, mapDispatchToProps)(AddToolkit)
