@@ -45,7 +45,7 @@ export const deleteToolkit = id => async (dispatch, getState, {getFirestore}) =>
   dispatch({type: 'DELETE_TOOLKIT_START'})
   try {
     const res = await firestore.collection('toolkit').doc(userId)
-     .get()
+    .get()
     const previousToolkit = res.data().toolkit
     // console.log(previousToolkit)
     // console.log('id', id)
@@ -60,5 +60,32 @@ export const deleteToolkit = id => async (dispatch, getState, {getFirestore}) =>
     dispatch({type: 'DELETE_TOOLKIT_SUCCESS'})
   } catch(err) {
     dispatch({type: 'DELETE_TOOLKIT_FAIL'})
+  }
+}
+
+//Update toolkit item
+export const editToolkit = (id, data) => async (dispatch, getState, {getFirestore}) => {
+  const firestore = getFirestore()
+  const userId = getState().firebase.auth.uid
+  dispatch({type: "ADD_TOOLKIT_START"})
+  try{
+    const res = await firestore.collection('toolkit').doc(userId)
+    .get()
+    const toolkit = res.data().toolkit
+    console.log('toolkit', toolkit)
+    const index = toolkit.findIndex(toolkitItem => toolkitItem.id === id)
+    console.log('index', index)
+    toolkit[index] = data
+    console.log(toolkit[index])
+
+    await firestore.collection('toolkit')
+    .doc(userId)
+    .update({
+      toolkit,
+    })
+
+    dispatch({type: "ADD_TOOLKIT_SUCCESS"})
+  }catch(err){
+    dispatch({type: "ADD_TOOLKIT_FAIL", payload: err.message})
   }
 }

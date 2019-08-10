@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import {NavLink} from 'react-router-dom'
 import {Navbar, Modal, Button, NavDropdown} from 'react-bootstrap'
+import { LinkContainer } from 'react-router-bootstrap'
 
 
 //fixed navbar
@@ -98,11 +99,15 @@ const Nav = ({loggedIn}) => {
               <div className="nav-dropdown">
               <NavDropdown title="ACCOUNT">
                 <div className="blue-nav">
-                <NavDropdown.Item className="nav-capital">  <NavLink to="/logout">Logout</NavLink></NavDropdown.Item>
+                <LinkContainer to="/logout">
+                  <NavDropdown.Item  className="nav-capital">Logout</NavDropdown.Item>
+                </LinkContainer>
                 </div>
                 <NavDropdown.Divider />
                 <div className="blue-nav">
-                <NavDropdown.Item className="nav-capital">  <NavLink to="/logout">My Account</NavLink></NavDropdown.Item>
+                <LinkContainer to="/logout">
+                  <NavDropdown.Item className="nav-capital">My Account</NavDropdown.Item>
+                </LinkContainer>
                 </div>
               </NavDropdown>
               </div>

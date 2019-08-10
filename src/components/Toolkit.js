@@ -31,11 +31,11 @@ const Toolkit = ({toolkit, userId, requesting, requested}) => {
         <Row>
           <Col sm={4}></Col>
           <Col sm={4}>
-            <p className="white-text p-margin-top">Add an item to your toolkit!</p>
-            <div className="white-toolkit-box">
-            <p className="p-margin text-weight"> Maybe something in one of the suggested categories:  </p>
+            <p className="white-text p-margin-top modal-heading">Your toolkit is empty but don't fret... you can fix that!</p>
+            {/* <div className="white-toolkit-box">
+            <p className="p-margin text-weight"> Maybe add something in one of the suggested categories:  </p>
             <p className="p-margin text-align-left">Art, Exercise, Music, Gaming, Travel, Animal Related, Social, Volunteering, Other...</p>
-            </div>
+            </div> */}
         </Col>
         <Col sm={4}></Col>
         </Row>
@@ -51,11 +51,11 @@ const Toolkit = ({toolkit, userId, requesting, requested}) => {
         <Row>
           <Col sm={4}></Col>
           <Col sm={4}>
-            <p className="white-text p-margin-top">Add an item to your toolkit!</p>
-            <div className="white-toolkit-box">
-            <p className="p-margin text-weight"> Maybe something in one of the suggested categories:  </p>
+            <p className="white-text p-margin-top modal-heading">Your toolkit is empty but don't fret... you can fix that!</p>
+            {/* <div className="white-toolkit-box">
+            <p className="p-margin text-weight"> Maybe add something in one of the suggested categories:  </p>
             <p className="p-margin text-align-left">Art, Exercise, Music, Gaming, Travel, Animal Related, Social, Volunteering, Other...</p>
-            </div>
+            </div> */}
         </Col>
         <Col sm={4}></Col>
         </Row>
@@ -65,8 +65,8 @@ const Toolkit = ({toolkit, userId, requesting, requested}) => {
     else {
       // content = `You have ${toolkit[userId].toolkit.length === 1? `${toolkit[userId].toolkit.length} item`  :  `${toolkit[userId].toolkit.length} items` }`
       // console.log('You have items in your toolkit!')
-      content = <div> {toolkit[userId].toolkit.map(toolkitItem =>
-        <ToolkitItem key={toolkitItem.id} toolkit={toolkitItem} />
+      content = <div> {toolkit[userId].toolkit.map((toolkitItem, index) =>
+        <ToolkitItem key={index} toolkit={toolkitItem} />
       )} </div>
     }
 

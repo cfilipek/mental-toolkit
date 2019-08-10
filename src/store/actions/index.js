@@ -1,3 +1,3 @@
 export {signUp, signOut, signIn} from './authActions'
 
-export {addToolkit, deleteToolkit} from './toolkitActions'
+export {addToolkit, deleteToolkit, editToolkit} from './toolkitActions'

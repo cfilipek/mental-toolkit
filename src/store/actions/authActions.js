@@ -1,5 +1,4 @@
 
-//function that returns another function
 //using redux thunk
 //already applied thunk middleware
 //docs https://firebase.google.com/docs/auth/web/password-auth

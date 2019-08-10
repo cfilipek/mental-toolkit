@@ -72,10 +72,10 @@ const AddToolkit = ({addToolkit}) => {
             //send our form
             const res = await addToolkit(values)
             console.log('res', res)
-                setSubmitting(false)
                 if (res) {
                 setisOpened(false)
                 }
+                setSubmitting(false)
                 resetForm()
           }}
         >
@@ -130,7 +130,7 @@ const AddToolkit = ({addToolkit}) => {
             <Button type="submit" className="button-blue">Add</Button>
           </Col>
           <Col sm={6}>
-          <Button className="button-blue" onClick={()=> setisOpened(false)}>Close</Button>
+          <Button className="button-blue" onClick={()=> {setisOpened(false)}}>Close</Button>
           </Col>
         </Row>
         </Form>

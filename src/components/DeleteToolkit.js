@@ -50,12 +50,12 @@ const DeleteToolkit = ({show, close, toolkit, deleteToolkit}) => {
   )
 }
 
-const mapStateToProps = (state) => ({
-
-})
+// const mapStateToProps = (state) => ({
+// //loading and error
+// })
 
 const mapDispatchToProps = {
   deleteToolkit: actions.deleteToolkit
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(DeleteToolkit)
+export default connect(null, mapDispatchToProps)(DeleteToolkit)
