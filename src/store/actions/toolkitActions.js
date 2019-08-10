@@ -75,7 +75,9 @@ export const editToolkit = (id, data) => async (dispatch, getState, {getFirestor
     console.log('toolkit', toolkit)
     const index = toolkit.findIndex(toolkitItem => toolkitItem.id === id)
     console.log('index', index)
-    toolkit[index] = data
+    toolkit[index].activity = data.activity
+    toolkit[index].category = data.category
+    toolkit[index].description = data.description
     console.log(toolkit[index])
 
     await firestore.collection('toolkit')

@@ -66,7 +66,7 @@ const Toolkit = ({toolkit, userId, requesting, requested}) => {
       // content = `You have ${toolkit[userId].toolkit.length === 1? `${toolkit[userId].toolkit.length} item`  :  `${toolkit[userId].toolkit.length} items` }`
       // console.log('You have items in your toolkit!')
       content = <div> {toolkit[userId].toolkit.map((toolkitItem, index) =>
-        <ToolkitItem key={index} toolkit={toolkitItem} />
+        <ToolkitItem key={toolkitItem.id} toolkit={toolkitItem} />
       )} </div>
     }
 

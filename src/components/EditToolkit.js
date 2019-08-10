@@ -39,7 +39,7 @@ const Modal = styled.div`
   width: 60rem;
   border: 3px solid white`
 
-const EditToolkit = ({show, close, toolkit, editToolkit}) => {
+const EditToolkit = ({show, close, toolkit, editToolkit, loading, error}) => {
   console.log('toolkit?', toolkit.toolkit.activity)
   return (
     <div className="text-center">
@@ -53,15 +53,15 @@ const EditToolkit = ({show, close, toolkit, editToolkit}) => {
           initialValues={{
             activity: toolkit.toolkit.activity,
             description: toolkit.toolkit.description,
-            category: toolkit.toolkit.category
+            category: toolkit.toolkit.category,
           }}
           validationSchema= {ToolkitSchema}
-          onSubmit={ async(values, { setSubmitting, resetForm }) => {
+          onSubmit={ async(values) => {
             //send our form
             console.log('made it here')
             console.log(toolkit.toolkit.id)
             console.log(values)
-            const res = await editToolkit(toolkit.toolkit.id, values)
+            await editToolkit(toolkit.toolkit.id, values)
             close()
           }}
         >
@@ -113,7 +113,7 @@ const EditToolkit = ({show, close, toolkit, editToolkit}) => {
               <ErrorMessage className="err-message" name="category"/>
               <Row>
                 <Col sm={6}>
-                  <Button type="submit" className="button-pink">Update</Button>
+                  <Button type="submit" className="button-pink">{loading? 'Updating' : 'Update'}</Button>
                 </Col>
                 <Col sm={6}>
                   <Button className="button-blue" onClick={close}>Close</Button>
@@ -127,10 +127,15 @@ const EditToolkit = ({show, close, toolkit, editToolkit}) => {
   )
 }
 
+const mapStateToProps = ({toolkit})  => ({
+  loading: toolkit.loading,
+  error: toolkit.error
+})
+
 const mapDispatchToProps = {
   editToolkit: actions.editToolkit
 }
 
-export default connect(null, mapDispatchToProps)(EditToolkit)
+export default connect(mapStateToProps, mapDispatchToProps)(EditToolkit)
 
 
