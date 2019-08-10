@@ -420,3 +420,32 @@ h3{
 .center-toolkit{
   text-align: -webkit-center;
 }
+
+.nav-capital{
+  text-transform: uppercase !important;
+}
+
+.nav-dropdown{
+  float: right !important;
+  margin-right: 20px;
+}
+
+.nav-dropdown a{
+  color: white !important;
+  background-color: #6dc8d6;
+}
+
+.nav-dropdown a:hover{
+  color: white !important;
+  background-color: #6dc8d6;
+  text-decoration: none;
+}
+
+.blue-nav{
+  color: #6dc8d6;
+}
+.blue-nav a:hover{
+  color: #6dc8d6;
+}
+
+

@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import {NavLink} from 'react-router-dom'
-import {Navbar, Modal, Button} from 'react-bootstrap'
+import {Navbar, Modal, Button, NavDropdown} from 'react-bootstrap'
 
 
 //fixed navbar
@@ -32,6 +32,7 @@ const Nav = ({loggedIn}) => {
           id="responsive-navbar-nav"
           className="justify-content-end"
         >
+
           <Navbar.Text className="margin-right-nav-emergency" onClick={handleShow} >
 
               Emergency Resources
@@ -94,14 +95,21 @@ const Nav = ({loggedIn}) => {
                 About
               </NavLink>
               </Navbar.Text>
-                <Navbar.Text className="margin-right-nav">
-                  <NavLink to="/logout">
-                        Logout
-                  </NavLink>
-                </Navbar.Text>
+              <div className="nav-dropdown">
+              <NavDropdown title="ACCOUNT">
+                <div className="blue-nav">
+                <NavDropdown.Item className="nav-capital">  <NavLink to="/logout">Logout</NavLink></NavDropdown.Item>
+                </div>
+                <NavDropdown.Divider />
+                <div className="blue-nav">
+                <NavDropdown.Item className="nav-capital">  <NavLink to="/logout">My Account</NavLink></NavDropdown.Item>
+                </div>
+              </NavDropdown>
+              </div>
             </div>
           }
           </div>
+
         </Navbar.Collapse>
       </Navbar>
     </div>

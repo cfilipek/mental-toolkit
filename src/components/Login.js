@@ -49,7 +49,9 @@ const Login = ({login, loading, error}) => {
                       name="email"
                       placeholder="Your email..."
                     />
+                    <div className="error" >
                     <ErrorMessage className="err-message" name="email"/>
+                    </div>
                   </Col>
                   <Col sm={6}>
                     <Field className="field"
@@ -57,7 +59,9 @@ const Login = ({login, loading, error}) => {
                       name="password"
                       placeholder="Your password..."
                     />
+                    <div className="error" >
                      <ErrorMessage className="err-message" name="password"/>
+                     </div>
                   </Col>
                   </Row>
                      <Link to="/signup"><Button className="button-pink margin-top-button">

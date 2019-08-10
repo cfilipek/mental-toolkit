@@ -55,10 +55,10 @@ const Signup = ({signUp, loading, error}) => {
             <Col sm={6}>
             <div>
               <Form  className="form">
-                <Row>
-                    <h6 color="white" className="form-title">
+              <h6 color="white" className="form-title center-text">
                       Sign up to create your own toolkit
                     </h6>
+                <Row>
                   <Col className="center-text" sm={6}>
                   <Field className="field"
                       type="text"
@@ -114,9 +114,9 @@ const Signup = ({signUp, loading, error}) => {
                         <Button className="button-blue margin-top-button" type="submit">
                         {loading= loading ? 'Signing up' : 'Sign Up' }
                         </Button>
-                        <p className="center-text padding-description">{error ? 'Password has already been used.' : 'Sign up to join the Mental Community!'}</p>
                       </Col>
                       </Row>
+                      <p className="center-text padding-description">{error ? 'Email has already been used.' : 'Sign up to join the Mental Community!'}</p>
                   </Form>
                   </div>
                   </Col>
