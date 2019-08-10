@@ -6,10 +6,10 @@ const Footer = () => {
     <div className="footer">
     <Row className="row justify-content-md-center">
       <Col sm={6}>
-        <h5>&copy; Mental LLC</h5>
+        <h5 className="footer-text">&copy; Mental LLC</h5>
       </Col>
       <Col sm={6}>
-      <h5>Created by Claire Filipek &hearts;</h5>
+      <h5 className="footer-text">Created by Claire Filipek &hearts;</h5>
       </Col>
     </Row>
   </div>

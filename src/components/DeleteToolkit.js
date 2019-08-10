@@ -2,8 +2,6 @@ import React from 'react'
 import {connect} from 'react-redux'
 import * as actions from '../store/actions'
 import {Button, Row, Col} from 'react-bootstrap'
-import * as Yup from 'yup';
-import { Formik, Field, Form, ErrorMessage} from 'formik';
 //https://www.styled-components.com/
 import styled from 'styled-components'
 
@@ -27,7 +25,7 @@ const Modal = styled.div`
   width: 60rem;
   border: 3px solid white`
 
-const DeleteToolkit = ({show, close, toolkit}) => {
+const DeleteToolkit = ({show, close, toolkit, deleteToolkit}) => {
   console.log('toolkit?', toolkit.toolkit.activity)
   return (
     <div className="text-center">
@@ -35,17 +33,29 @@ const DeleteToolkit = ({show, close, toolkit}) => {
         <h3 className="modal-heading">
           Do you really want to delete {toolkit.toolkit.activity}?
         </h3>
-        <h6>Type your activity and press add.</h6>
+        <h6 className="remove-sub-head">Remove this item from your toolkit.</h6>
         <div>
-        <Formik>
-          <Form>
-          </Form>
-        </Formik>
         </div>
-        <Button className="button-blue" onClick={close}>Close</Button>
+        <Row>
+          <Col sm={6}>
+            <Button className="button-pink" onClick={() => deleteToolkit(toolkit.toolkit.id)}>Delete</Button>
+          </Col>
+          <Col sm={6}>
+            <Button className="button-blue" onClick={close}>Close</Button>
+          </Col>
+        </Row>
+
       </Modal>
     </div>
   )
 }
 
-export default DeleteToolkit
+const mapStateToProps = (state) => ({
+
+})
+
+const mapDispatchToProps = {
+  deleteToolkit: actions.deleteToolkit
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(DeleteToolkit)

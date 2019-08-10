@@ -356,6 +356,7 @@ h3{
   /* background-repeat: repeat-y;
   background-size: 100% 100%; */
   /* margin-top: -100px; */
+  min-height: 100vh;
 }
 
 .title-white{
@@ -391,4 +392,21 @@ h3{
 
 .category-bold{
   font-weight: 700;
+}
+
+.footer-text{
+  font-size: 15px;
+}
+
+.button-pink{
+  background-color: rgb(211, 112, 112) !important;
+  border-radius: 25px !important;
+  padding: 5px !important;
+  padding-left: 25px !important;
+  padding-right: 25px !important;
+  font-size: 20px !important;
+}
+
+.remove-sub-head{
+  margin-bottom: 30px;
 }
