@@ -379,3 +379,12 @@ h3{
 .activity-heading{
   margin-bottom: 30px;
 }
+
+.toolkit-display .row{
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+}
+
+.category-margin{
+  margin-bottom: 30px;
+}

@@ -1,9 +1,7 @@
 import React from 'react'
-import {connect} from 'react-redux'
-import * as actions from '../store/actions'
-import {Button, Row, Col} from 'react-bootstrap'
 //https://www.styled-components.com/
 import styled from 'styled-components'
+import {Button} from 'react-bootstrap'
 
 //styling modal
 const Modal = styled.div`
@@ -67,9 +65,10 @@ const ViewToolkit = ({show, close, toolkit}) => {
            {toolkit.toolkit.activity}
         </h3>
         <h5 className="text-left">{toolkit.toolkit.description}</h5>
-        <h5 className="text-center">
+        <h5 className="text-center category-margin">
            Category: {toolkit.toolkit.category}
         </h5>
+        <Button className="button-blue" onClick={close}>Close</Button>
       </Modal>
     </div>
   )
