@@ -366,3 +366,16 @@ h3{
   font-size: 65px;
   color: white
 }
+
+.text-left{
+  text-align: left !important;
+}
+
+.category-icon{
+  width: 75px;
+  margin-bottom: 30px;
+}
+
+.activity-heading{
+  margin-bottom: 30px;
+}
