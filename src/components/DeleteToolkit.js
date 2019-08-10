@@ -26,7 +26,7 @@ const Modal = styled.div`
   border: 3px solid white`
 
 const DeleteToolkit = ({show, close, toolkit, deleteToolkit}) => {
-  console.log('toolkit?', toolkit.toolkit.activity)
+  // console.log('toolkit?', toolkit.toolkit.activity)
   return (
     <div className="text-center">
       <Modal opened={show} close={close}>

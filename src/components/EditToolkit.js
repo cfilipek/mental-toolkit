@@ -39,8 +39,8 @@ const Modal = styled.div`
   width: 60rem;
   border: 3px solid white`
 
-const EditToolkit = ({show, close, toolkit, editToolkit, loading, error}) => {
-  console.log('toolkit?', toolkit.toolkit.activity)
+const EditToolkit = ({show, close, toolkit, editToolkit, loading}) => {
+  // console.log('toolkit?', toolkit.toolkit.activity)
   return (
     <div className="text-center">
       <Modal opened={show} close={close}>
@@ -58,9 +58,9 @@ const EditToolkit = ({show, close, toolkit, editToolkit, loading, error}) => {
           validationSchema= {ToolkitSchema}
           onSubmit={ async(values) => {
             //send our form
-            console.log('made it here')
-            console.log(toolkit.toolkit.id)
-            console.log(values)
+            // console.log('made it here')
+            // console.log(toolkit.toolkit.id)
+            // console.log(values)
             await editToolkit(toolkit.toolkit.id, values)
             close()
           }}

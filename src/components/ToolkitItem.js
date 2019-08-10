@@ -8,7 +8,7 @@ const ToolkitItem = (toolkit) => {
   const [isDeleting, setisDeleting] = useState(false);
   const [isViewing, setisViewing] = useState(false);
   const [isUpdating, setisUpdating] = useState(false);
-  console.log(isDeleting);
+  // console.log(isDeleting);
   return (
     <div>
       <Row className="text-center">

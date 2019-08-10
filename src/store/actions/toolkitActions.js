@@ -72,13 +72,13 @@ export const editToolkit = (id, data) => async (dispatch, getState, {getFirestor
     const res = await firestore.collection('toolkit').doc(userId)
     .get()
     const toolkit = res.data().toolkit
-    console.log('toolkit', toolkit)
+    // console.log('toolkit', toolkit)
     const index = toolkit.findIndex(toolkitItem => toolkitItem.id === id)
-    console.log('index', index)
+    // console.log('index', index)
     toolkit[index].activity = data.activity
     toolkit[index].category = data.category
     toolkit[index].description = data.description
-    console.log(toolkit[index])
+    // console.log(toolkit[index])
 
     await firestore.collection('toolkit')
     .doc(userId)

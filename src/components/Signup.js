@@ -29,8 +29,8 @@ const SignupSchema = Yup.object().shape({
 
 //Using Formik https://blog.bitsrc.io/creating-forms-in-react-with-formik-and-yup-698d09363a22
 const Signup = ({signUp, loading, error}) => {
-  console.log(loading)
-  console.log(error)
+  // console.log(loading)
+  // console.log(error)
   return (
     <Formik
       initialValues={{

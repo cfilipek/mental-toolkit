@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import {connect} from 'react-redux'
 import AddToolkit from './AddToolkit'
 import { firestoreConnect } from 'react-redux-firebase'
@@ -9,10 +9,10 @@ import ToolkitItem from './ToolkitItem'
 
 
 
-const Toolkit = ({toolkit, userId, requesting, requested}) => {
-  console.log('toolkit', toolkit)
-  console.log('requesting', requesting)
-  console.log('requested', requested)
+const Toolkit = ({toolkit, userId, requested}) => {
+  // console.log('toolkit', toolkit)
+  // console.log('requesting', requesting)
+  // console.log('requested', requested)
 
 
   let content
@@ -65,7 +65,7 @@ const Toolkit = ({toolkit, userId, requesting, requested}) => {
     else {
       // content = `You have ${toolkit[userId].toolkit.length === 1? `${toolkit[userId].toolkit.length} item`  :  `${toolkit[userId].toolkit.length} items` }`
       // console.log('You have items in your toolkit!')
-      content = <div> {toolkit[userId].toolkit.map((toolkitItem, index) =>
+      content = <div> {toolkit[userId].toolkit.map((toolkitItem) =>
         <ToolkitItem key={toolkitItem.id} toolkit={toolkitItem} />
       )} </div>
     }
@@ -91,7 +91,6 @@ const mapStateToProps = ({firebase, firestore}) => ({
   //get user id to associate w/toolkit of user
   userId: firebase.auth.uid,
   toolkit: firestore.data.toolkit,
-  requesting: firestore.status.requesting,
   requested: firestore.status.requested
   })
 

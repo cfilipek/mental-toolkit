@@ -27,7 +27,7 @@ const Modal = styled.div`
 
 
 const ViewToolkit = ({show, close, toolkit}) => {
-  console.log('toolkit?', toolkit.toolkit.category)
+  // console.log('toolkit?', toolkit.toolkit.category)
   if((toolkit.toolkit.category) === "Art"){
     icon = 'https://i.imgur.com/MsmxeY0.png'
   }

@@ -49,7 +49,7 @@ const Modal = styled.div`
 //using Formik: https://blog.bitsrc.io/creating-forms-in-react-with-formik-and-yup-698d09363a22
 const AddToolkit = ({addToolkit, loading}) => {
   const [isOpened, setisOpened] = useState(false)
-  console.log(addToolkit)
+  // console.log(addToolkit)
   return (
     <div className="text-center">
       <Button className="button-blue" onClick={()=> setisOpened(true)}>
@@ -71,7 +71,7 @@ const AddToolkit = ({addToolkit, loading}) => {
           onSubmit={ async(values, { setSubmitting, resetForm }) => {
             //send our form
             const res = await addToolkit(values)
-            console.log('res', res)
+            // console.log('res', res)
                 if (res) {
                 setisOpened(false)
                 }
@@ -88,7 +88,9 @@ const AddToolkit = ({addToolkit, loading}) => {
                     name="activity"
                     placeholder="Enter your activity"
               />
-               <ErrorMessage className="err-message" name="activity"/>
+              <div className="error" >
+                <ErrorMessage className="err-message" name="activity"/>
+               </div>
             </Col>
           </Row>
           <Row>
@@ -99,7 +101,9 @@ const AddToolkit = ({addToolkit, loading}) => {
                     name="description"
                     placeholder="Enter your description"
               />
-              <ErrorMessage className="err-message" name="description"/>
+              <div className="error" >
+                <ErrorMessage className="err-message" name="description"/>
+              </div>
             </Col>
           </Row>
           <Row>
