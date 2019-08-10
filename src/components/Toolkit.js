@@ -78,7 +78,8 @@ const Toolkit = ({toolkit, userId, requesting, requested}) => {
           <Col sm={4}><AddToolkit/></Col>
           <Col sm={4}></Col>
         </Row>
-        <div  className="center-text behind">{content}</div>
+         <div  className="center-text behind">{content}
+        </div>
       </div>
     )
   }

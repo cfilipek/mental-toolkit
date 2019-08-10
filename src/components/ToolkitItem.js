@@ -16,12 +16,13 @@ const ToolkitItem = (toolkit) => {
         <Col sm={4}>
           <div className="center-toolkit">
             <Row className="toolkit-display">
-              <Col sm={4}>{toolkit.toolkit.activity}
+              <Col sm={4} className="margin-bottom-activity">{toolkit.toolkit.activity}
                   <div onClick={()=> setisUpdating(true)} className="edit-delete">Edit</div>
                   <EditToolkit toolkit ={toolkit} show={isUpdating} close ={()=> setisUpdating(false)}/>
               </Col>
        {/* <Col sm={4}>{toolkitItem.description}</Col> */}
-              <Col sm={4}>{toolkit.toolkit.category}
+              <Col sm={4}
+              className="margin-bottom-activity">{toolkit.toolkit.category}
               <div onClick={()=> setisDeleting(true)} className="edit-delete">Delete</div>
                <DeleteToolkit toolkit ={toolkit} show={isDeleting} close ={()=> setisDeleting(false)}/>
                </Col>

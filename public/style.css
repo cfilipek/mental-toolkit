@@ -335,11 +335,16 @@ h3{
   width: 500px;
   background-color: white;
   color: #4c5ad2;
-  margin-top: 50px;
+  margin-top: 30px;
+  /* margin-bottom: 30px; */
   padding-top: 20px;
   padding-bottom: 20px;
   border-radius: 25px;
   border: 3px solid #6dc8d6;
+}
+
+.margin-bottom-activity{
+  margin-bottom: 20px;
 }
 
 .eye{
@@ -349,11 +354,13 @@ h3{
 }
 
 .edit-delete{
-  margin-top: 15px;
+  position: absolute;
   text-transform: uppercase;
   font-family: 'Concert One', cursive !important;
-  bottom: 0;
+  bottom: -40px;
   cursor: pointer;
+  left: 65px;
+  padding-bottom: 15px;
 }
 
 .toolkit-margin-bottom{
@@ -483,5 +490,4 @@ h3{
 .blue-nav a:hover{
   color: #6dc8d6;
 }
-
 
