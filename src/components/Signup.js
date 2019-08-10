@@ -49,7 +49,7 @@ const Signup = ({signUp, loading, error}) => {
     >
       {() => (
         <div>
-          <div className="title title-margin-bottom">Sign up</div>
+          <div className="title title-margin-bottom center-text no-margin-left">Sign up</div>
           <Row className="center">
             <Col sm={3}></Col>
             <Col sm={6}>

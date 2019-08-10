@@ -11,8 +11,8 @@ import ToolkitItem from './ToolkitItem'
 
 const Toolkit = ({toolkit, userId, requesting, requested}) => {
   console.log('toolkit', toolkit)
-  console.log(requesting)
-  console.log(requested)
+  console.log('requesting', requesting)
+  console.log('requested', requested)
 
 
   let content
@@ -31,11 +31,11 @@ const Toolkit = ({toolkit, userId, requesting, requested}) => {
         <Row>
           <Col sm={4}></Col>
           <Col sm={4}>
-        <p className="white-text p-margin-top">Add an item to your toolkit!</p>
-        <div className="white-toolkit-box">
-        <p className="p-margin text-weight"> Maybe something in one of the suggested categories:  </p>
-        <p className="p-margin text-align-left">Art, Exercise, Music, Gaming, Travel, Animal Related, Social, Volunteering, Other...</p>
-        </div>
+            <p className="white-text p-margin-top">Add an item to your toolkit!</p>
+            <div className="white-toolkit-box">
+            <p className="p-margin text-weight"> Maybe something in one of the suggested categories:  </p>
+            <p className="p-margin text-align-left">Art, Exercise, Music, Gaming, Travel, Animal Related, Social, Volunteering, Other...</p>
+            </div>
         </Col>
         <Col sm={4}></Col>
         </Row>
@@ -51,11 +51,11 @@ const Toolkit = ({toolkit, userId, requesting, requested}) => {
         <Row>
           <Col sm={4}></Col>
           <Col sm={4}>
-        <p className="white-text p-margin-top">Add an item to your toolkit!</p>
-        <div className="white-toolkit-box">
-        <p className="p-margin text-weight"> Maybe something in one of the suggested categories:  </p>
-        <p className="p-margin text-align-left">Art, Exercise, Music, Gaming, Travel, Animal Related, Social, Volunteering, Other...</p>
-        </div>
+            <p className="white-text p-margin-top">Add an item to your toolkit!</p>
+            <div className="white-toolkit-box">
+            <p className="p-margin text-weight"> Maybe something in one of the suggested categories:  </p>
+            <p className="p-margin text-align-left">Art, Exercise, Music, Gaming, Travel, Animal Related, Social, Volunteering, Other...</p>
+            </div>
         </Col>
         <Col sm={4}></Col>
         </Row>
@@ -100,4 +100,4 @@ export default compose(connect(mapStateToProps, mapDispatchToProps),
 firestoreConnect(props => [`toolkit/${props.userId}`])
 )(Toolkit)
 
-//use connect first to recieve props to find the userId
+//use connect firestore to recieve props to find the userId

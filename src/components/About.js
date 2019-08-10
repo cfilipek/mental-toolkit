@@ -3,7 +3,7 @@ import {Col, Row} from 'react-bootstrap'
 
 const About = () => {
   return(
-    <div>
+    <div className="max-width">
       <Row>
         <Col sm={4} className="title">
           <div>About <span className="blue-text"><br/>Me</span>ntal</div>

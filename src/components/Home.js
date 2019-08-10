@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 
 const Home = () => {
   return(
-    <div>
+    <div className="max-width">
       <Row>
         <Col sm={4} className="title background-image-title">
           My mental health is important

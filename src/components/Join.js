@@ -3,7 +3,7 @@ import {Col, Row} from 'react-bootstrap'
 
 const Join = () => {
   return(
-    <div>
+    <div className="max-width">
       <Row>
         <Col sm={4}>
           <div className="title">Why <br/> Join?</div>
