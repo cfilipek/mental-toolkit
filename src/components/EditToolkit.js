@@ -27,13 +27,13 @@ const Modal = styled.div`
   width: 60rem;
   border: 3px solid white`
 
-const DeleteToolkit = ({show, close, toolkit}) => {
+const EditToolkit = ({show, close, toolkit}) => {
   console.log('toolkit?', toolkit.toolkit.activity)
   return (
     <div className="text-center">
       <Modal opened={show} close={close}>
         <h3 className="modal-heading">
-          Do you really want to delete {toolkit.toolkit.activity}?
+          Update {toolkit.toolkit.activity}?
         </h3>
         <h6>Type your activity and press add.</h6>
         <div>
@@ -48,4 +48,4 @@ const DeleteToolkit = ({show, close, toolkit}) => {
   )
 }
 
-export default DeleteToolkit
+export default EditToolkit

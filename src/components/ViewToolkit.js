@@ -66,7 +66,7 @@ const ViewToolkit = ({show, close, toolkit}) => {
         </h3>
         <h5 className="text-left">{toolkit.toolkit.description}</h5>
         <h5 className="text-center category-margin">
-           Category: {toolkit.toolkit.category}
+           <span className="category-bold">Category:</span> {toolkit.toolkit.category}
         </h5>
         <Button className="button-blue" onClick={close}>Close</Button>
       </Modal>

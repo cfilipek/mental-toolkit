@@ -2,10 +2,12 @@ import React, {useState} from 'react'
 import {Row, Col} from 'react-bootstrap'
 import DeleteToolkit from './DeleteToolkit'
 import ViewToolkit from './ViewToolkit'
+import EditToolkit from './EditToolkit';
 
 const ToolkitItem = (toolkit) => {
   const [isDeleting, setisDeleting] = useState(false);
   const [isViewing, setisViewing] = useState(false);
+  const [isUpdating, setisUpdating] = useState(false);
   console.log(isDeleting);
   return (
     <div>
@@ -15,7 +17,8 @@ const ToolkitItem = (toolkit) => {
           <div>
             <Row className="toolkit-display">
               <Col sm={4}>{toolkit.toolkit.activity}
-                  <div className="edit-delete">Edit</div>
+                  <div onClick={()=> setisUpdating(true)} className="edit-delete">Edit</div>
+                  <EditToolkit toolkit ={toolkit} show={isUpdating} close ={()=> setisUpdating(false)}/>
               </Col>
        {/* <Col sm={4}>{toolkitItem.description}</Col> */}
               <Col sm={4}>{toolkit.toolkit.category}

@@ -388,3 +388,7 @@ h3{
 .category-margin{
   margin-bottom: 30px;
 }
+
+.category-bold{
+  font-weight: 700;
+}
