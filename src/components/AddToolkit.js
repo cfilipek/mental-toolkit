@@ -39,10 +39,10 @@ const Modal = styled.div`
   width: 60rem;
   border: 3px solid white`
 
-const Background = styled.div`
-  backgound-color= grey;
-  opactiy: 0.5;
-`
+// const Background = styled.div`
+//   backgound-color= grey;
+//   opactiy: 0.5;
+// `
 
 
 //add toolkit modal using Formik

@@ -7,7 +7,6 @@ import Signup from './components/Signup';
 import Home from './components/Home';
 import Toolkit from './components/Toolkit';
 import Join from './components/Join';
-import SingleToolkit from './components/SingleToolkit';
 import {connect} from 'react-redux'
 import Logout from './components/Logout';
 
@@ -26,7 +25,7 @@ const App = ({loggedIn}) => {
       <Switch>
         <Route exact path='/' component={Home}></Route>
         <Route exact path='/toolkit' component={Toolkit}></Route>
-        <Route path='/toolkit:id' component={SingleToolkit}></Route>
+        {/* <Route path='/toolkit:id' component={SingleToolkit}></Route> */}
         <Route path='/about' component={About}></Route>
         <Route path='/whyjoin' component={Join}></Route>
         <Route path='/logout' component={Logout}></Route>

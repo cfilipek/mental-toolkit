@@ -338,12 +338,15 @@ h3{
 .eye{
   width: 40%;
   margin-top: 10px;
+  cursor: pointer;
 }
 
 .edit-delete{
   margin-top: 15px;
   text-transform: uppercase;
   font-family: 'Concert One', cursive !important;
+  bottom: 0;
+  cursor: pointer;
 }
 
 .toolkit-margin-bottom{
