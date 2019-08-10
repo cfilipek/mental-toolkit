@@ -51,59 +51,76 @@ const Signup = ({signUp, loading, error}) => {
         <div>
           <div className="title title-margin-bottom">Sign up</div>
           <Row className="center">
-            <Col sm={4}></Col>
-            <Col sm={4}>
+            <Col sm={3}></Col>
+            <Col sm={6}>
             <div>
               <Form  className="form">
                 <Row>
                     <h6 color="white" className="form-title">
                       Sign up to create your own toolkit
                     </h6>
-                  <Col sm={6}>
+                  <Col className="center-text" sm={6}>
                   <Field className="field"
                       type="text"
                       name="firstName"
                       placeholder="first name"
                     />
-                    <ErrorMessage name="name"/>
+                    <div className="error" >
+                    <ErrorMessage name="firstName"/>
+                    </div>
                     <Field className="field"
                       type="text"
                       name="lastName"
                       placeholder="last name"
                     />
-                    <ErrorMessage name="name"/>
+                    <div className="error" >
+                    <ErrorMessage name="lastName"/>
+                    </div>
                     <Field className="field"
                       type="email"
                       name="email"
                       placeholder="Your email"
                     />
+                    <div className="error" >
                     <ErrorMessage name="email"/>
+                    </div>
                   </Col>
-                  <Col sm={6}>
+                  <Col className="center-text" sm={6}>
                     <Field className="field"
                       type="password"
                       name="password"
                       placeholder="Your password"
                     />
+                    <div className="error" >
                      <ErrorMessage name="password"/>
+                     </div>
                      <Field className="field"
                       type="password"
                       name="confirmPassword"
                       placeholder="Re-type your password"
                     />
+                    <div className="error" >
                      <ErrorMessage name="password"/>
+                     </div>
                   </Col>
                   </Row>
-                     <Link to="/login"><Button className="button-blue margin-top-button">
-                      Login
-                      </Button></Link>
-                      <Button className="button-blue margin-top-button margin-left-button" type="submit">
-                      {loading= loading ? 'Signing up' : 'Sign Up' }
-                      </Button>
-                      <p className="center-text padding-description">{error ? 'Password has already been used.' : 'Sign up to join the Mental Community!'}</p>
+                  <Row className="center-text">
+                    <Col sm={6}>
+                      <Link to="/login"><Button className="button-pink margin-top-button">
+                        Login
+                        </Button></Link>
+                      </Col>
+                      <Col sm={6}>
+                        <Button className="button-blue margin-top-button" type="submit">
+                        {loading= loading ? 'Signing up' : 'Sign Up' }
+                        </Button>
+                        <p className="center-text padding-description">{error ? 'Password has already been used.' : 'Sign up to join the Mental Community!'}</p>
+                      </Col>
+                      </Row>
                   </Form>
                   </div>
                   </Col>
+                  <Col sm={3}></Col>
                 </Row>
             </div>
       )}

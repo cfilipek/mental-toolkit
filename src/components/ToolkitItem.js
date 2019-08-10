@@ -14,7 +14,7 @@ const ToolkitItem = (toolkit) => {
       <Row className="text-center">
         <Col sm={4}></Col>
         <Col sm={4}>
-          <div>
+          <div className="center-toolkit">
             <Row className="toolkit-display">
               <Col sm={4}>{toolkit.toolkit.activity}
                   <div onClick={()=> setisUpdating(true)} className="edit-delete">Edit</div>

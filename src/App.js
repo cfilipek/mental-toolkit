@@ -9,6 +9,7 @@ import Toolkit from './components/Toolkit';
 import Join from './components/Join';
 import {connect} from 'react-redux'
 import Logout from './components/Logout';
+import Community from './components/Community';
 
 
 
@@ -28,6 +29,7 @@ const App = ({loggedIn}) => {
         {/* <Route path='/toolkit:id' component={SingleToolkit}></Route> */}
         <Route path='/about' component={About}></Route>
         <Route path='/whyjoin' component={Join}></Route>
+        <Route path='/community' component={Community}></Route>
         <Route path='/logout' component={Logout}></Route>
         <Redirect to='/' component={Home}/>
       </Switch>

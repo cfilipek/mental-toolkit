@@ -164,13 +164,9 @@ h3{
 
 .field{
   padding: 10px;
-  padding-right: 20px;
-  padding-left: 20px;
   border-radius: 15px;
   border: none;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  margin-right:15px;
+  margin-bottom: 10px;
 }
 
 .field-toolkit{
@@ -387,6 +383,7 @@ h3{
 }
 
 .category-margin{
+  margin-top: 30px;
   margin-bottom: 30px;
 }
 
@@ -409,4 +406,18 @@ h3{
 
 .remove-sub-head{
   margin-bottom: 30px;
+}
+
+.white-text{
+  color: white;
+}
+
+.error{
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+.center-toolkit{
+  text-align: -webkit-center;
+  /* text-align: -moz-center; */
 }

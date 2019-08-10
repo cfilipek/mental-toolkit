@@ -60,7 +60,7 @@ const Login = ({login, loading, error}) => {
                      <ErrorMessage className="err-message" name="password"/>
                   </Col>
                   </Row>
-                     <Link to="/signup"><Button className="button-blue margin-top-button">
+                     <Link to="/signup"><Button className="button-pink margin-top-button">
                       Sign up
                       </Button></Link>
                       <Button className="button-blue margin-top-button margin-left-button" type="submit">
