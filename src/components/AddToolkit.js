@@ -27,10 +27,22 @@ const Modal = styled.div`
   transform: ${({ opened }) =>
   opened ? 'translate(-50%, -50%)' : 'translate(-50%, -150%)'};
   visibility: ${({ opened }) => (opened ? 'visible' : 'hidden')};
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 150;
+  justify-content: center;
   background-color: #4c5ad2;
   color: white;
   padding: 50px;
-  border-radius: 25px;`
+  border-radius: 25px;
+  width: 60rem;
+  border: 3px solid white`
+
+const Background = styled.div`
+  backgound-color= grey;
+  opactiy: 0.5;
+`
 
 
 //add toolkit modal using Formik
@@ -40,14 +52,14 @@ const AddToolkit = ({addToolkit}) => {
   console.log(addToolkit)
   return (
     <div className="text-center">
-      <Button className="button-blue move-down-button" onClick={()=> setisOpened(true)}>
+      <Button className="button-blue" onClick={()=> setisOpened(true)}>
       Add toolkit item
       </Button>
       <Modal opened={isOpened} close={()=> setisOpened(false)}>
         <h3 className="modal-heading">
           Add your toolkit item
         </h3>
-        <h6>Type your todo and press add.</h6>
+        <h6>Type your activity and press add.</h6>
         <div>
         <Formik
           initialValues={{

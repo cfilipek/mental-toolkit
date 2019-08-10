@@ -14,13 +14,14 @@ export const addToolkit = data => async(dispatch, getState, {getFirestore, getFi
        description: data.description,
        category: data.category
      }
+     console.log(res)
      if (!res.data()) {
       firestore
         .collection('toolkit')
         .doc(userId)
         .set({
           toolkit: [newToolkit],
-        });
+        })
     } else {
       firestore
         .collection('toolkit')
