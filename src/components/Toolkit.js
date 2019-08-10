@@ -5,13 +5,12 @@ import { firestoreConnect } from 'react-redux-firebase'
 import {compose} from 'redux' //takes several things and combines
 import Loader from './Loader'
 import {Row, Col} from 'react-bootstrap'
-import DeleteToolkit from './DeleteToolkit';
 import ToolkitItem from './ToolkitItem'
 
 
 
 const Toolkit = ({toolkit, userId, requesting, requested}) => {
-  console.log(toolkit)
+  console.log('toolkit', toolkit)
   console.log(requesting)
   console.log(requested)
 
@@ -26,9 +25,41 @@ const Toolkit = ({toolkit, userId, requesting, requested}) => {
       // console.log('loading')
     }
 
+
     else if(!toolkit[userId] && requested[`toolkit/${userId}`]){
-      content = <p>You have nothing in your toolkit</p>
+      content = <div>
+        <Row>
+          <Col sm={4}></Col>
+          <Col sm={4}>
+        <p className="white-text p-margin-top">Add an item to your toolkit!</p>
+        <div className="white-toolkit-box">
+        <p className="p-margin text-weight"> Maybe something in one of the suggested categories:  </p>
+        <p className="p-margin text-align-left">Art, Exercise, Music, Gaming, Travel, Animal Related, Social, Volunteering, Other...</p>
+        </div>
+        </Col>
+        <Col sm={4}></Col>
+        </Row>
+      </div>
       // console.log('You have no items in your toolkit')
+    }
+    else if (!toolkit[userId]){
+      content = <Loader/>
+    }
+
+    else if (toolkit[userId].toolkit.length < 1){
+      content = <div>
+        <Row>
+          <Col sm={4}></Col>
+          <Col sm={4}>
+        <p className="white-text p-margin-top">Add an item to your toolkit!</p>
+        <div className="white-toolkit-box">
+        <p className="p-margin text-weight"> Maybe something in one of the suggested categories:  </p>
+        <p className="p-margin text-align-left">Art, Exercise, Music, Gaming, Travel, Animal Related, Social, Volunteering, Other...</p>
+        </div>
+        </Col>
+        <Col sm={4}></Col>
+        </Row>
+      </div>
     }
 
     else {

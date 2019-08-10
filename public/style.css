@@ -412,6 +412,30 @@ h3{
   color: white;
 }
 
+.p-margin{
+  margin-top: 15px;
+}
+
+.p-margin-top{
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.white-toolkit-box{
+  background-color: white;
+  padding: 15px;
+  border-radius: 25px;
+}
+
+.text-align-left{
+  text-align: left !important;
+  padding-left: 30px;
+}
+
+.text-weight{
+  font-weight: 600;
+}
+
 .error{
   margin-top: 5px;
   margin-bottom: 15px;
@@ -428,6 +452,7 @@ h3{
 .nav-dropdown{
   float: right !important;
   margin-right: 20px;
+  border-left: 1px solid white;
 }
 
 .nav-dropdown a{
