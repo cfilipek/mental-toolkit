@@ -68,7 +68,7 @@ const AddToolkit = ({addToolkit}) => {
             category: ''
           }}
           validationSchema= {ToolkitSchema}
-          onSubmit={ async(values, { setSubmitting }) => {
+          onSubmit={ async(values, { setSubmitting, resetForm }) => {
             //send our form
             const res = await addToolkit(values)
             console.log('res', res)
@@ -76,6 +76,7 @@ const AddToolkit = ({addToolkit}) => {
                 if (res) {
                 setisOpened(false)
                 }
+                resetForm()
           }}
         >
           <Form>
