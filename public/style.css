@@ -145,15 +145,15 @@ h3{
   width: 100%;
 }
 
-.background-image-title{
+/* .background-image-title{
   background-image: url(https://i.imgur.com/O88nNgJ.jpg);
   padding-bottom: 100px;
   background-repeat: no-repeat;
   background-size: 100% 100%;
-}
+} */
 
 .background-image-right{
-  background-image: url(https://i.imgur.com/CEh4aJm.jpg);
+  background-image: url(https://i.imgur.com/O88nNgJ.jpg);
   padding-bottom: 100px;
   width: 100%;
   background-repeat: no-repeat;

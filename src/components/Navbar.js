@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import {NavLink} from 'react-router-dom'
 import {Navbar, Modal, Button, NavDropdown} from 'react-bootstrap'
+//link container to deal with nested a tag due to drop down
 import { LinkContainer } from 'react-router-bootstrap'
 
 
@@ -105,7 +106,7 @@ const Nav = ({loggedIn}) => {
                 </div>
                 <NavDropdown.Divider />
                 <div className="blue-nav">
-                <LinkContainer to="/logout">
+                <LinkContainer to="/account">
                   <NavDropdown.Item className="nav-capital">My Account</NavDropdown.Item>
                 </LinkContainer>
                 </div>

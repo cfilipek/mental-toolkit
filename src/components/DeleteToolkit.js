@@ -50,9 +50,6 @@ const DeleteToolkit = ({show, close, toolkit, deleteToolkit}) => {
   )
 }
 
-// const mapStateToProps = (state) => ({
-// //loading and error
-// })
 
 const mapDispatchToProps = {
   deleteToolkit: actions.deleteToolkit

@@ -10,7 +10,7 @@ export const signUp = data => async (dispatch, getState, {getFirebase, getFirest
   try{
     const res = await firebase.auth().createUserWithEmailAndPassword(data.email, data.password)
     //res.user.uid === userId
-    console.log(res.user.uid)
+    // console.log(res.user.uid)
 
     //Add data https://firebase.google.com/docs/firestore/manage-data/add-data
     await firestore
