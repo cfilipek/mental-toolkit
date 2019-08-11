@@ -1,3 +1,4 @@
+import { async } from "q";
 
 //using redux thunk
 //already applied thunk middleware
@@ -13,6 +14,8 @@ export const signUp = data => async (dispatch, getState, {getFirebase, getFirest
     // console.log(res.user.uid)
 
     //Add data https://firebase.google.com/docs/firestore/manage-data/add-data
+
+
     await firestore
     .collection('users')
     .doc(res.user.uid).set({
@@ -22,7 +25,7 @@ export const signUp = data => async (dispatch, getState, {getFirebase, getFirest
       // password: data.password
       //Adds to firebase database!!!
     })
-
+ dispatch({type: 'AUTH_SUCCESS'})
   }catch(err){
     dispatch({type: 'AUTH_FAIL', payload: err.message}) //payload to capture error message
   }
@@ -54,4 +57,39 @@ export const signIn = (data) => async (dispatch, getState, {getFirebase}) => {
     dispatch({type: 'AUTH_FAIL', payload: err.message}) //payload to capture error message
   }
   dispatch({type: 'AUTH_END'})
+}
+
+//Edit profile
+
+export const editProfile = data => async (dispatch, getState, {getFirebase, getFirestore}) => {
+  const firebase = getFirebase()
+  const firestore = getFirestore()
+  const user = firebase.auth().currentUser
+  console.log(user)
+  const userEmail = getState().firebase.auth.email
+  const userId = getState().firebase.auth.uid
+  console.log(userEmail)
+  console.log(userId)
+  // const {uid: userId, email: userEmail} = getState().firebase.auth
+  dispatch({type: 'PROFILE_EDIT_START'})
+  try{
+    if(data.email !== userEmail){
+      await user.updateEmail(data.email)
+    }
+
+    await firestore.collection('users')
+    .doc(userId)
+    .set({
+      firstName: data.firstName,
+      lastName: data.lastName
+    })
+
+    if(data.password.length > 0){
+      await user.updatePassword(data.password)
+    }
+
+    dispatch({type: 'PROFILE_EDIT_SUCCESS'})
+  }catch(err){
+    dispatch({type: "PROFILE_EDIT_FAIL", payload: err.message})
+  }
 }

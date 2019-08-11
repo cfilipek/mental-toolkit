@@ -7,8 +7,9 @@ import {Button, Col, Row} from 'react-bootstrap'
 import * as actions from '../store/actions'
 
 
+
 //yup docs https://github.com/jquense/yup
-const SignupSchema = Yup.object().shape({
+const accountSchema = Yup.object().shape({
   firstName: Yup.string()
   .required('Your first name is required')
   .min(3, 'Too short.')
@@ -27,25 +28,27 @@ const SignupSchema = Yup.object().shape({
 });
 
 
-const Account = ({signUp, loading, error, email, firstName}) => {
-
-  console.log(email)
-
+const Account = ({editProfile, loading, error, firebase}) => {
+  let firstname = (firebase.profile.firstName? firebase.profile.firstName : '')
+  const lastname = (firebase.profile.lastName?  firebase.profile.lastName : '')
+  console.log(firebase.profile.firstName)
   return (
+
     <div className="toolkit-margin-bottom">
     <div className="title-white account-margin">Your Account</div>
         <Formik
           initialValues={{
-            firstName: '',
-            lastName:'',
-            email: '',
+            firstName: firstname,
+            lastName: lastname,
+            email: firebase.auth.email,
             password: '',
             confirmPassword: ''
           }}
-          validationSchema={SignupSchema}
+          validationSchema={accountSchema}
           onSubmit={(values, { setSubmitting }) => {
-            console.log(values);
-            signUp(values)
+            // console.log(values);
+            //edit profile here
+            editProfile(values)
             setSubmitting(false)
           }}
         >
@@ -117,7 +120,7 @@ const Account = ({signUp, loading, error, email, firstName}) => {
                             </Button>
                           </Col>
                           </Row>
-                          <p className="center-text padding-description">{error ? 'Email has already been used.' : "Hey it's you again!"}</p>
+                          <p className="center-text padding-description">{error ? "There was an error. Please try again" : "Hey it's you again!"}</p>
                       </Form>
                       </div>
                       </Col>
@@ -134,11 +137,12 @@ const Account = ({signUp, loading, error, email, firstName}) => {
 const mapStateToProps = ({auth, firebase}) => ({
   loading: auth.loading,
   error: auth.error,
-  email: firebase.auth.email,
+  // email: firebase.auth.email
+  firebase
 })
 
 const mapDispatchToProps = {
-  signUp : actions.signUp
+  editProfile : actions.editProfile
 }
 
 

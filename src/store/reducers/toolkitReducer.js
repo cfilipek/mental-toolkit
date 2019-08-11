@@ -1,4 +1,4 @@
-
+//http://gavinschulz.com/posts/2017-03-22-4-techniques-for-loading-states-in-redux.html
 const initialState = {
   loading: false,
   deleteToolkit: {

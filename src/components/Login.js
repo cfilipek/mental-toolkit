@@ -86,6 +86,8 @@ const Login = ({login, loading, error}) => {
   );
 };
 
+//In corporate password reset? And email Authentification? https://www.robinwieruch.de/complete-firebase-authentication-react-tutorial/#react-application-setup
+
 const mapSateToProps = ({auth}) => ({
   loading: auth.loading,
   error: auth.error
