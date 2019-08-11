@@ -19,6 +19,7 @@ const ToolkitSchema = Yup.object().shape({
     .required('The category is required.')
 })
 
+//https://medium.com/@lucksp_22012/pure-react-modal-6e562a317b85
 //styling modal
 const Modal = styled.div`
   position: fixed;

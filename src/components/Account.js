@@ -4,7 +4,6 @@ import {connect} from 'react-redux'
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import {Button, Col, Row} from 'react-bootstrap'
-import {Link} from 'react-router-dom'
 import * as actions from '../store/actions'
 
 

@@ -7,6 +7,7 @@ import { Formik, Field, Form, ErrorMessage} from 'formik';
 //https://www.styled-components.com/
 import styled from 'styled-components'
 
+
 //Yup to define fields of db model
 const ToolkitSchema = Yup.object().shape({
   activity: Yup.string()
@@ -19,6 +20,7 @@ const ToolkitSchema = Yup.object().shape({
     .required('The category is required.')
 })
 
+//https://medium.com/@lucksp_22012/pure-react-modal-6e562a317b85
 //styling modal
 const Modal = styled.div`
   position: fixed;
