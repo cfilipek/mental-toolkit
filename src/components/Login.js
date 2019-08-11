@@ -32,8 +32,8 @@ const Login = ({login, loading, error}) => {
         setSubmitting(false)
       }}
     >
-        <div>
-          <div className="title title-margin-bottom center-text no-margin-left">Login</div>
+        <div className="blue-bkgd">
+          <div className="title title-margin-bottom center-text no-margin-left white">Login</div>
           <Row className="center">
             <Col sm={4}></Col>
             <Col sm={4}>
@@ -65,16 +65,16 @@ const Login = ({login, loading, error}) => {
                   </Col>
                   </Row>
                   <Row>
+                  <Col className="center-text"  sm={6}>
+                      <Button className="button-blue margin-top-button" type="submit">
+                      {loading= loading ? 'Logging in' : 'Login' }
+                      </Button>
+                      </Col>
                     <Col className="center-text"  sm={6}>
                      <Link to="/signup"><Button className="button-pink margin-top-button">
                       Sign up
                       </Button></Link>
                     </Col>
-                    <Col className="center-text"  sm={6}>
-                      <Button className="button-blue margin-top-button margin-left-button" type="submit">
-                      {loading= loading ? 'Logging in' : 'Login' }
-                      </Button>
-                      </Col>
                       </Row>
                       <p className="center-text padding-description">{error ? 'This user does not exist.' : 'Welcome back!'}</p>
                   </Form>

@@ -48,8 +48,8 @@ const Signup = ({signUp, loading, error}) => {
       }}
     >
       {() => (
-        <div>
-          <div className="title title-margin-bottom center-text no-margin-left">Sign up</div>
+        <div className="blue-bkgd">
+          <div className="title title-margin-bottom center-text no-margin-left white">Sign up</div>
           <Row className="center">
             <Col sm={3}></Col>
             <Col sm={6}>
@@ -105,15 +105,15 @@ const Signup = ({signUp, loading, error}) => {
                   </Col>
                   </Row>
                   <Row className="center-text">
+                  <Col sm={6}>
+                        <Button className="button-blue margin-top-button" type="submit">
+                        {loading= loading ? 'Signing up' : 'Sign Up' }
+                        </Button>
+                      </Col>
                     <Col sm={6}>
                       <Link to="/login"><Button className="button-pink margin-top-button">
                         Login
                         </Button></Link>
-                      </Col>
-                      <Col sm={6}>
-                        <Button className="button-blue margin-top-button" type="submit">
-                        {loading= loading ? 'Signing up' : 'Sign Up' }
-                        </Button>
                       </Col>
                       </Row>
                       <p className="center-text padding-description">{error ? 'Email has already been used.' : 'Sign up to join the Mental Community!'}</p>
