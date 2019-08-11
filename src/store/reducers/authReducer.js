@@ -21,6 +21,12 @@ export default (state = initialState, action) => {
       return {...state, loading:false, error:false}
     case 'PROFILE_EDIT_FAIL':
       return {...state, loading:false, error: action.payload}
+    case 'DELETE_START':
+      return {...state, loading: true}
+    case 'DELETE_SUCCESS':
+      return {...state, loading:false, error:false}
+    case 'DELETE_FAIL':
+      return {...state, loading:false, error: action.payload}
     default:
       return state
   }

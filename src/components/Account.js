@@ -1,10 +1,11 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {connect} from 'react-redux'
-//Formik docs https://github.com/jar
+//Formik docs https://jaredpalmer.com/formik/docs/overview
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import {Button, Col, Row} from 'react-bootstrap'
 import * as actions from '../store/actions'
+import DeleteModal from './DeleteModal';
 
 
 
@@ -28,18 +29,20 @@ const accountSchema = Yup.object().shape({
 });
 
 
-const Account = ({editProfile, loading, error, firebase}) => {
-  let firstname = (firebase.profile.firstName? firebase.profile.firstName : '')
-  const lastname = (firebase.profile.lastName?  firebase.profile.lastName : '')
-  console.log(firebase.profile.firstName)
+const Account = ({editProfile, error, firebase, deleteUser}) => {
+//   let firstname = (firebase.profile.firstName? firebase.profile.firstName : '')
+//   const lastname = (firebase.profile.lastName?  firebase.profile.lastName : '')
+//   console.log(firebase.profile.firstName)
+const [isDeleting, setisDeleting] = useState(false)
   return (
 
     <div className="toolkit-margin-bottom">
     <div className="title-white account-margin">Your Account</div>
+    <h3 className="center-text white welcome-margin">Welcome {firebase.profile.firstName} {firebase.profile.lastName}!</h3>
         <Formik
           initialValues={{
-            firstName: firstname,
-            lastName: lastname,
+            firstName: firebase.profile.firstName,
+            lastName: firebase.profile.lastName,
             email: firebase.auth.email,
             password: '',
             confirmPassword: ''
@@ -111,13 +114,12 @@ const Account = ({editProfile, loading, error, firebase}) => {
                       <Row className="center-text">
                       <Col sm={6}>
                             <Button className="button-blue margin-top-button" type="submit">
-                            {loading= loading ? 'Updating' : 'Update' }
+                            Update
                             </Button>
                           </Col>
                         <Col sm={6}>
-                          <Button className="button-pink margin-top-button">
-                            Delete
-                            </Button>
+                        <Button onClick={()=> setisDeleting(true)} className="button-pink margin-top-button">Delete</Button>
+                        <DeleteModal email={firebase.auth.email}  show={isDeleting} close ={()=> setisDeleting(false)}/>
                           </Col>
                           </Row>
                           <p className="center-text padding-description">{error ? "There was an error. Please try again" : "Hey it's you again!"}</p>
@@ -135,7 +137,7 @@ const Account = ({editProfile, loading, error, firebase}) => {
 
 
 const mapStateToProps = ({auth, firebase}) => ({
-  loading: auth.loading,
+  // loading: auth.loading,
   error: auth.error,
   // email: firebase.auth.email
   firebase

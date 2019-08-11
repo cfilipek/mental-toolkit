@@ -5,9 +5,9 @@ import ViewToolkit from './ViewToolkit'
 import EditToolkit from './EditToolkit';
 
 const ToolkitItem = (toolkit) => {
-  const [isDeleting, setisDeleting] = useState(false);
-  const [isViewing, setisViewing] = useState(false);
-  const [isUpdating, setisUpdating] = useState(false);
+  const [isDeleting, setisDeleting] = useState(false)
+  const [isViewing, setisViewing] = useState(false)
+  const [isUpdating, setisUpdating] = useState(false)
   // console.log(isDeleting);
   return (
     <div>

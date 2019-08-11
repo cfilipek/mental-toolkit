@@ -1,4 +1,3 @@
-import { async } from "q";
 
 //using redux thunk
 //already applied thunk middleware
@@ -91,5 +90,22 @@ export const editProfile = data => async (dispatch, getState, {getFirebase, getF
     dispatch({type: 'PROFILE_EDIT_SUCCESS'})
   }catch(err){
     dispatch({type: "PROFILE_EDIT_FAIL", payload: err.message})
+  }
+}
+
+//delete user
+export const deleteUser = () => async (dispatch, getState, {getFirebase, getFirestore}) => {
+  const firebase = getFirebase()
+  const firestore= getFirestore()
+  dispatch({type: 'DELETE_START'})
+  const user = firebase.auth().currentUser
+  const userId = getState().firebase.auth.uid
+  try{
+    await user.delete()
+    await firestore.collection('users')
+    .doc(userId).delete()
+
+  } catch(err){
+    dispatch({type: 'DELETE_FAIL'})
   }
 }
