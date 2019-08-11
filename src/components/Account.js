@@ -34,7 +34,7 @@ const Account = ({signUp, loading, error, email, firstName}) => {
 
   return (
     <div className="toolkit-margin-bottom">
-    <div className="title-white">Your Account</div>
+    <div className="title-white account-margin">Your Account</div>
         <Formik
           initialValues={{
             firstName: '',
@@ -109,16 +109,16 @@ const Account = ({signUp, loading, error, email, firstName}) => {
                       <Row className="center-text">
                       <Col sm={6}>
                             <Button className="button-blue margin-top-button" type="submit">
-                            {loading= loading ? 'Signing up' : 'Sign Up' }
+                            {loading= loading ? 'Updating' : 'Update' }
                             </Button>
                           </Col>
                         <Col sm={6}>
-                          <Link to="/login"><Button className="button-pink margin-top-button">
-                            Login
-                            </Button></Link>
+                          <Button className="button-pink margin-top-button">
+                            Delete
+                            </Button>
                           </Col>
                           </Row>
-                          <p className="center-text padding-description">{error ? 'Email has already been used.' : 'Sign up to join the Mental Community!'}</p>
+                          <p className="center-text padding-description">{error ? 'Email has already been used.' : "Hey it's you again!"}</p>
                       </Form>
                       </div>
                       </Col>
