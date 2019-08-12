@@ -32,7 +32,7 @@ export const signUp = data => async (dispatch, getState, {getFirebase, getFirest
   dispatch({type: 'AUTH_END'})
 }
 
-//logout action creator
+//logout redux thunk
 //https://firebase.google.com/docs/auth/web/password-auth -- signout section
 export const signOut = () => async (dispatch, getState, {getFirebase}) => {
   const firebase = getFirebase()
@@ -44,7 +44,7 @@ export const signOut = () => async (dispatch, getState, {getFirebase}) => {
   }
 }
 
-//login action creator
+//login redux thunk
 //https://firebase.google.com/docs/auth/web/password-auth -- login section
 export const signIn = (data) => async (dispatch, getState, {getFirebase}) => {
   const firebase = getFirebase()
