@@ -96,7 +96,7 @@ const [isDeleting, setisDeleting] = useState(false)
                         <Field className="field"
                           type="password"
                           name="password"
-                          placeholder="Your password"
+                          placeholder="Your password or new password"
                         />
                         <div className="error" >
                         <ErrorMessage name="password"/>
