@@ -117,6 +117,7 @@ const Signup = ({signUp, loading, error}) => {
                       </Col>
                       </Row>
                       <p className="center-text padding-description">{error ? 'Email has already been used.' : 'Sign up to join the Mental Community!'}</p>
+                      <p className="center-text padding-description">By signing up you are agreeing to our <Link to='/terms'>term of service</Link></p>
                   </Form>
                   </div>
                   </Col>
