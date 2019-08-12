@@ -30,7 +30,6 @@ const App = ({loggedIn}) => {
         <Route exact path='/toolkit' component={Toolkit}></Route>
         {/* <Route path='/toolkit:id' component={SingleToolkit}></Route> */}
         <Route path='/about' component={About}></Route>
-        <Route path='/terms' component={Terms}></Route>
         <Route path='/whyjoin' component={Join}></Route>
         <Route path='/community' component={Community}></Route>
         <Route path='/logout' component={Logout}></Route>
@@ -41,6 +40,7 @@ const App = ({loggedIn}) => {
   } else {
     routes = (
       <Switch>
+        <Route path='/terms' component={Terms}></Route>
         <Route exact path='/' component={Home}></Route>
         <Route path='/about' component={About}></Route>
         <Route exact path='/login' component={Login}></Route>

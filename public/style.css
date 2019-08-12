@@ -510,7 +510,7 @@ h3{
   margin-bottom: 20px;
 }
 
-/* .terms{
+.terms{
   text-transform: capitalize;
 }
 
@@ -518,4 +518,11 @@ h3{
   color:inherit;
   text-decoration:none;
   cursor:text;
-} */
+}
+
+.col-width-terms{
+  padding-top: 200px;
+  margin: 0 auto;
+  max-width: 800px;
+  padding-bottom: 200px;
+}

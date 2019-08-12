@@ -2,7 +2,7 @@ import React from 'react'
 
 const Terms = () => {
   return (
-    <div>
+    <div className="col-width-terms">
     <h2>Welcome to Mental</h2>
       <p>These terms and conditions outline the rules and regulations for the use of Mental's Website.</p> <br />
       <div className="terms"> Mental</div>
